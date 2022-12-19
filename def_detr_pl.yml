@@ -1,9 +1,9 @@
 name: def_detr_pl
 channels:
-  - anaconda
   - pytorch
   - nvidia
   - conda-forge
+  - anaconda
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
@@ -130,7 +130,6 @@ dependencies:
   - pysocks=1.7.1=py37_1
   - python=3.7.15=h7a1cb2a_1
   - python_abi=3.7=2_cp37m
-  - pytorch=1.13.1=py3.7_cuda11.7_cudnn8.5.0_0
   - pytorch-cuda=11.7=h67b0de4_1
   - pytorch-lightning=0.8.5=py_0
   - pytorch-mutex=1.0=cuda
@@ -187,4 +186,4 @@ dependencies:
     - timm==0.6.12
     - torch==1.13.0
     - wandb==0.13.7
-prefix: /scratch/staff/jrs596/python_environments/envs/def_detr_pl
+prefix: /local/scratch/jrs596/envs/def_detr_pl
