@@ -1,0 +1,53 @@
+2022-12-15 11:30:15,909 INFO    StreamThr :443 [internal.py:wandb_internal():90] W&B internal server running at pid: 443, started at: 2022-12-15 11:30:15.907569
+2022-12-15 11:30:15,913 DEBUG   HandlerThread:443 [handler.py:handle_request():139] handle_request: status
+2022-12-15 11:30:15,917 DEBUG   SenderThread:443 [sender.py:send_request():317] send_request: status
+2022-12-15 11:30:15,920 DEBUG   SenderThread:443 [sender.py:send():303] send: header
+2022-12-15 11:30:15,920 INFO    WriterThread:443 [datastore.py:open_for_write():75] open: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_113015-nmuk4wu7/run-nmuk4wu7.wandb
+2022-12-15 11:30:15,949 DEBUG   SenderThread:443 [sender.py:send():303] send: run
+2022-12-15 11:30:16,410 DEBUG   HandlerThread:443 [handler.py:handle_request():139] handle_request: check_version
+2022-12-15 11:30:16,418 INFO    SenderThread:443 [dir_watcher.py:__init__():216] watching files in: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_113015-nmuk4wu7/files
+2022-12-15 11:30:16,419 INFO    SenderThread:443 [sender.py:_start_run_threads():931] run started: nmuk4wu7 with start time 1671103815.909203
+2022-12-15 11:30:16,419 DEBUG   SenderThread:443 [sender.py:send():303] send: summary
+2022-12-15 11:30:16,422 INFO    SenderThread:443 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-15 11:30:16,422 DEBUG   SenderThread:443 [sender.py:send_request():317] send_request: check_version
+2022-12-15 11:30:16,506 DEBUG   HandlerThread:443 [handler.py:handle_request():139] handle_request: run_start
+2022-12-15 11:30:16,514 DEBUG   HandlerThread:443 [system_info.py:__init__():31] System info init
+2022-12-15 11:30:16,514 DEBUG   HandlerThread:443 [system_info.py:__init__():46] System info init done
+2022-12-15 11:30:16,515 INFO    HandlerThread:443 [system_monitor.py:start():150] Starting system monitor
+2022-12-15 11:30:16,516 INFO    HandlerThread:443 [system_monitor.py:probe():171] Collecting system info
+2022-12-15 11:30:16,516 INFO    SystemMonitor:443 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-12-15 11:30:16,518 INFO    SystemMonitor:443 [interfaces.py:start():168] Started cpu
+2022-12-15 11:30:16,519 INFO    SystemMonitor:443 [interfaces.py:start():168] Started disk
+2022-12-15 11:30:16,520 INFO    SystemMonitor:443 [interfaces.py:start():168] Started gpu
+2022-12-15 11:30:16,521 INFO    SystemMonitor:443 [interfaces.py:start():168] Started memory
+2022-12-15 11:30:16,523 INFO    SystemMonitor:443 [interfaces.py:start():168] Started network
+2022-12-15 11:30:16,550 DEBUG   HandlerThread:443 [system_info.py:probe():195] Probing system
+2022-12-15 11:30:16,551 DEBUG   HandlerThread:443 [system_info.py:_probe_git():180] Probing git
+2022-12-15 11:30:16,581 DEBUG   HandlerThread:443 [system_info.py:_probe_git():188] Probing git done
+2022-12-15 11:30:16,581 DEBUG   HandlerThread:443 [system_info.py:probe():241] Probing system done
+2022-12-15 11:30:16,582 DEBUG   HandlerThread:443 [system_monitor.py:probe():180] {'os': 'Linux-5.4.0-132-generic-x86_64-with-debian-buster-sid', 'python': '3.7.15', 'heartbeatAt': '2022-12-15T11:30:16.550562', 'startedAt': '2022-12-15T11:30:15.794005', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/userfs/j/jrs596/scripts/Elodea/fine_tune_d-detr3.py', 'codePath': 'fine_tune_d-detr3.py', 'git': {'remote': 'https://github.com/jrsykes/Elodea.git', 'commit': 'f3dedaffeaf4952492c4853d5ba7c6584b5304a6'}, 'email': 'jamie.sykes@york.ac.uk', 'root': '/home/userfs/j/jrs596/scripts/Elodea', 'host': 'csgpu5.cs.york.ac.uk', 'username': 'jrs596', 'executable': '/local/scratch/jrs596/envs/d-detr2/bin/python', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 4.213666666666666, 'min': 800.0, 'max': 4700.0}, 'cpu_freq_per_core': [{'current': 4.201, 'min': 800.0, 'max': 4700.0}, {'current': 4.283, 'min': 800.0, 'max': 4700.0}, {'current': 4.267, 'min': 800.0, 'max': 4700.0}, {'current': 4.217, 'min': 800.0, 'max': 4700.0}, {'current': 4.22, 'min': 800.0, 'max': 4700.0}, {'current': 4.183, 'min': 800.0, 'max': 4700.0}, {'current': 4.11, 'min': 800.0, 'max': 4700.0}, {'current': 4.271, 'min': 800.0, 'max': 4700.0}, {'current': 4.214, 'min': 800.0, 'max': 4700.0}, {'current': 4.174, 'min': 800.0, 'max': 4700.0}, {'current': 4.241, 'min': 800.0, 'max': 4700.0}, {'current': 4.183, 'min': 800.0, 'max': 4700.0}], 'disk': {'total': 95.56354522705078, 'used': 56.510189056396484}, 'gpu': 'NVIDIA GeForce GTX 1080 Ti', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}, {'name': 'Quadro P6000', 'memory_total': 25769803776}], 'memory': {'total': 31.298721313476562}}
+2022-12-15 11:30:16,583 INFO    HandlerThread:443 [system_monitor.py:probe():181] Finished collecting system info
+2022-12-15 11:30:16,583 INFO    HandlerThread:443 [system_monitor.py:probe():184] Publishing system info
+2022-12-15 11:30:16,584 DEBUG   HandlerThread:443 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2022-12-15 11:30:16,589 DEBUG   HandlerThread:443 [system_info.py:_save_pip():67] Saving pip packages done
+2022-12-15 11:30:16,589 DEBUG   HandlerThread:443 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2022-12-15 11:30:17,422 INFO    Thread-19 :443 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_113015-nmuk4wu7/files/requirements.txt
+2022-12-15 11:30:17,422 INFO    Thread-19 :443 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_113015-nmuk4wu7/files/wandb-summary.json
+2022-12-15 11:30:17,423 INFO    Thread-19 :443 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_113015-nmuk4wu7/files/conda-environment.yaml
+2022-12-15 11:30:18,516 DEBUG   HandlerThread:443 [system_info.py:_save_conda():86] Saving conda packages done
+2022-12-15 11:30:18,525 INFO    HandlerThread:443 [system_monitor.py:probe():186] Finished publishing system info
+2022-12-15 11:30:18,586 DEBUG   SenderThread:443 [sender.py:send():303] send: files
+2022-12-15 11:30:18,586 INFO    SenderThread:443 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-12-15 11:30:18,601 DEBUG   HandlerThread:443 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-15 11:30:18,601 DEBUG   SenderThread:443 [sender.py:send_request():317] send_request: stop_status
+2022-12-15 11:30:18,764 DEBUG   SenderThread:443 [sender.py:send():303] send: telemetry
+2022-12-15 11:30:19,231 INFO    Thread-22 :443 [upload_job.py:push():143] Uploaded file /tmp/tmpvh9a3my9wandb/29rtjnp7-wandb-metadata.json
+2022-12-15 11:30:19,421 INFO    Thread-19 :443 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_113015-nmuk4wu7/files/conda-environment.yaml
+2022-12-15 11:30:19,422 INFO    Thread-19 :443 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_113015-nmuk4wu7/files/wandb-metadata.json
+2022-12-15 11:30:19,422 INFO    Thread-19 :443 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_113015-nmuk4wu7/files/output.log
+2022-12-15 11:30:21,425 INFO    Thread-19 :443 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_113015-nmuk4wu7/files/output.log
+2022-12-15 11:30:23,430 INFO    Thread-19 :443 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_113015-nmuk4wu7/files/output.log
+2022-12-15 11:30:27,437 INFO    Thread-19 :443 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_113015-nmuk4wu7/files/output.log
+2022-12-15 11:30:47,484 INFO    Thread-19 :443 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_113015-nmuk4wu7/files/config.yaml
+2022-12-15 11:31:16,523 DEBUG   SystemMonitor:443 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-12-15 11:31:16,526 DEBUG   SenderThread:443 [sender.py:send():303] send: stats

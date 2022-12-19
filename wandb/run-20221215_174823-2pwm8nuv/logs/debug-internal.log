@@ -1,0 +1,63 @@
+2022-12-15 17:48:23,986 INFO    StreamThr :27297 [internal.py:wandb_internal():90] W&B internal server running at pid: 27297, started at: 2022-12-15 17:48:23.982186
+2022-12-15 17:48:24,000 DEBUG   HandlerThread:27297 [handler.py:handle_request():139] handle_request: status
+2022-12-15 17:48:24,012 DEBUG   SenderThread:27297 [sender.py:send_request():317] send_request: status
+2022-12-15 17:48:24,021 DEBUG   SenderThread:27297 [sender.py:send():303] send: header
+2022-12-15 17:48:24,022 INFO    WriterThread:27297 [datastore.py:open_for_write():75] open: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/run-2pwm8nuv.wandb
+2022-12-15 17:48:24,047 DEBUG   SenderThread:27297 [sender.py:send():303] send: run
+2022-12-15 17:48:24,567 DEBUG   HandlerThread:27297 [handler.py:handle_request():139] handle_request: check_version
+2022-12-15 17:48:24,571 INFO    SenderThread:27297 [dir_watcher.py:__init__():216] watching files in: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files
+2022-12-15 17:48:24,572 INFO    SenderThread:27297 [sender.py:_start_run_threads():931] run started: 2pwm8nuv with start time 1671126503.960052
+2022-12-15 17:48:24,573 DEBUG   SenderThread:27297 [sender.py:send():303] send: summary
+2022-12-15 17:48:24,576 INFO    SenderThread:27297 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-15 17:48:24,579 DEBUG   SenderThread:27297 [sender.py:send_request():317] send_request: check_version
+2022-12-15 17:48:24,707 DEBUG   HandlerThread:27297 [handler.py:handle_request():139] handle_request: run_start
+2022-12-15 17:48:24,734 DEBUG   HandlerThread:27297 [system_info.py:__init__():31] System info init
+2022-12-15 17:48:24,735 DEBUG   HandlerThread:27297 [system_info.py:__init__():46] System info init done
+2022-12-15 17:48:24,736 INFO    HandlerThread:27297 [system_monitor.py:start():150] Starting system monitor
+2022-12-15 17:48:24,738 INFO    HandlerThread:27297 [system_monitor.py:probe():171] Collecting system info
+2022-12-15 17:48:24,739 INFO    SystemMonitor:27297 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-12-15 17:48:24,741 INFO    SystemMonitor:27297 [interfaces.py:start():168] Started cpu
+2022-12-15 17:48:24,747 INFO    SystemMonitor:27297 [interfaces.py:start():168] Started disk
+2022-12-15 17:48:24,768 INFO    SystemMonitor:27297 [interfaces.py:start():168] Started gpu
+2022-12-15 17:48:24,771 INFO    SystemMonitor:27297 [interfaces.py:start():168] Started memory
+2022-12-15 17:48:24,774 INFO    SystemMonitor:27297 [interfaces.py:start():168] Started network
+2022-12-15 17:48:24,835 DEBUG   HandlerThread:27297 [system_info.py:probe():195] Probing system
+2022-12-15 17:48:24,856 DEBUG   HandlerThread:27297 [system_info.py:_probe_git():180] Probing git
+2022-12-15 17:48:24,950 DEBUG   HandlerThread:27297 [system_info.py:_probe_git():188] Probing git done
+2022-12-15 17:48:24,951 DEBUG   HandlerThread:27297 [system_info.py:probe():241] Probing system done
+2022-12-15 17:48:24,952 DEBUG   HandlerThread:27297 [system_monitor.py:probe():180] {'os': 'Linux-5.4.0-135-generic-x86_64-with-debian-buster-sid', 'python': '3.7.15', 'heartbeatAt': '2022-12-15T17:48:24.836017', 'startedAt': '2022-12-15T17:48:23.895724', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/userfs/j/jrs596/scripts/Elodea/fine_tune_d-detr2.py', 'codePath': 'fine_tune_d-detr2.py', 'git': {'remote': 'https://github.com/jrsykes/Elodea.git', 'commit': 'f3dedaffeaf4952492c4853d5ba7c6584b5304a6'}, 'email': 'jamie.sykes@york.ac.uk', 'root': '/home/userfs/j/jrs596/scripts/Elodea', 'host': 'csgpu1.cs.york.ac.uk', 'username': 'jrs596', 'executable': '/scratch/staff/jrs596/python_environments/envs/def_detr_pl/bin/python', 'cpu_count': 20, 'cpu_count_logical': 40, 'cpu_freq': {'current': 813.5853250000001, 'min': 800.0, 'max': 3000.0}, 'cpu_freq_per_core': [{'current': 800.077, 'min': 800.0, 'max': 3000.0}, {'current': 800.227, 'min': 800.0, 'max': 3000.0}, {'current': 800.408, 'min': 800.0, 'max': 3000.0}, {'current': 800.006, 'min': 800.0, 'max': 3000.0}, {'current': 800.07, 'min': 800.0, 'max': 3000.0}, {'current': 800.347, 'min': 800.0, 'max': 3000.0}, {'current': 800.417, 'min': 800.0, 'max': 3000.0}, {'current': 800.231, 'min': 800.0, 'max': 3000.0}, {'current': 800.517, 'min': 800.0, 'max': 3000.0}, {'current': 1456.441, 'min': 800.0, 'max': 3000.0}, {'current': 800.667, 'min': 800.0, 'max': 3000.0}, {'current': 800.672, 'min': 800.0, 'max': 3000.0}, {'current': 800.58, 'min': 800.0, 'max': 3000.0}, {'current': 800.117, 'min': 800.0, 'max': 3000.0}, {'current': 879.151, 'min': 800.0, 'max': 3000.0}, {'current': 800.641, 'min': 800.0, 'max': 3000.0}, {'current': 800.056, 'min': 800.0, 'max': 3000.0}, {'current': 800.079, 'min': 800.0, 'max': 3000.0}, {'current': 800.191, 'min': 800.0, 'max': 3000.0}, {'current': 800.616, 'min': 800.0, 'max': 3000.0}, {'current': 800.767, 'min': 800.0, 'max': 3000.0}, {'current': 800.144, 'min': 800.0, 'max': 3000.0}, {'current': 800.238, 'min': 800.0, 'max': 3000.0}, {'current': 800.279, 'min': 800.0, 'max': 3000.0}, {'current': 800.306, 'min': 800.0, 'max': 3000.0}, {'current': 800.232, 'min': 800.0, 'max': 3000.0}, {'current': 800.716, 'min': 800.0, 'max': 3000.0}, {'current': 800.125, 'min': 800.0, 'max': 3000.0}, {'current': 800.174, 'min': 800.0, 'max': 3000.0}, {'current': 1348.097, 'min': 800.0, 'max': 3000.0}, {'current': 800.348, 'min': 800.0, 'max': 3000.0}, {'current': 800.154, 'min': 800.0, 'max': 3000.0}, {'current': 800.231, 'min': 800.0, 'max': 3000.0}, {'current': 800.146, 'min': 800.0, 'max': 3000.0}, {'current': 807.787, 'min': 800.0, 'max': 3000.0}, {'current': 800.073, 'min': 800.0, 'max': 3000.0}, {'current': 800.054, 'min': 800.0, 'max': 3000.0}, {'current': 800.153, 'min': 800.0, 'max': 3000.0}, {'current': 800.505, 'min': 800.0, 'max': 3000.0}, {'current': 800.527, 'min': 800.0, 'max': 3000.0}], 'disk': {'total': 86.169921875, 'used': 42.20223617553711}, 'gpu': 'NVIDIA GeForce GTX 1080 Ti', 'gpu_count': 8, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}, {'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}], 'memory': {'total': 187.56929779052734}}
+2022-12-15 17:48:24,953 INFO    HandlerThread:27297 [system_monitor.py:probe():181] Finished collecting system info
+2022-12-15 17:48:24,954 INFO    HandlerThread:27297 [system_monitor.py:probe():184] Publishing system info
+2022-12-15 17:48:24,955 DEBUG   HandlerThread:27297 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2022-12-15 17:48:24,958 DEBUG   HandlerThread:27297 [system_info.py:_save_pip():67] Saving pip packages done
+2022-12-15 17:48:24,959 DEBUG   HandlerThread:27297 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2022-12-15 17:48:25,609 INFO    Thread-19 :27297 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files/requirements.txt
+2022-12-15 17:48:25,610 INFO    Thread-19 :27297 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files/conda-environment.yaml
+2022-12-15 17:48:25,611 INFO    Thread-19 :27297 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files/wandb-summary.json
+2022-12-15 17:48:28,213 DEBUG   HandlerThread:27297 [system_info.py:_save_conda():86] Saving conda packages done
+2022-12-15 17:48:28,232 INFO    HandlerThread:27297 [system_monitor.py:probe():186] Finished publishing system info
+2022-12-15 17:48:28,300 DEBUG   SenderThread:27297 [sender.py:send():303] send: files
+2022-12-15 17:48:28,302 INFO    SenderThread:27297 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-12-15 17:48:28,338 DEBUG   HandlerThread:27297 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-15 17:48:28,341 DEBUG   SenderThread:27297 [sender.py:send_request():317] send_request: stop_status
+2022-12-15 17:48:28,536 DEBUG   SenderThread:27297 [sender.py:send():303] send: telemetry
+2022-12-15 17:48:28,598 INFO    Thread-19 :27297 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files/conda-environment.yaml
+2022-12-15 17:48:28,599 INFO    Thread-19 :27297 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files/wandb-metadata.json
+2022-12-15 17:48:29,000 INFO    Thread-22 :27297 [upload_job.py:push():143] Uploaded file /tmp/tmpqhvm2ailwandb/3tv4zm8q-wandb-metadata.json
+2022-12-15 17:48:37,623 INFO    Thread-19 :27297 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files/output.log
+2022-12-15 17:48:39,627 INFO    Thread-19 :27297 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files/output.log
+2022-12-15 17:48:43,543 DEBUG   HandlerThread:27297 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-15 17:48:43,544 DEBUG   SenderThread:27297 [sender.py:send_request():317] send_request: stop_status
+2022-12-15 17:48:44,636 INFO    Thread-19 :27297 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files/output.log
+2022-12-15 17:48:45,637 INFO    Thread-19 :27297 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files/output.log
+2022-12-15 17:48:46,640 INFO    Thread-19 :27297 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files/output.log
+2022-12-15 17:48:50,653 INFO    Thread-19 :27297 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files/output.log
+2022-12-15 17:48:55,667 INFO    Thread-19 :27297 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_174823-2pwm8nuv/files/config.yaml
+2022-12-15 17:48:58,749 DEBUG   HandlerThread:27297 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-15 17:48:58,751 DEBUG   SenderThread:27297 [sender.py:send_request():317] send_request: stop_status
+2022-12-15 17:49:13,959 DEBUG   HandlerThread:27297 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-15 17:49:13,960 DEBUG   SenderThread:27297 [sender.py:send_request():317] send_request: stop_status
+2022-12-15 17:49:24,776 DEBUG   SystemMonitor:27297 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-12-15 17:49:24,790 DEBUG   SenderThread:27297 [sender.py:send():303] send: stats
+2022-12-15 17:49:29,172 DEBUG   HandlerThread:27297 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-15 17:49:29,173 DEBUG   SenderThread:27297 [sender.py:send_request():317] send_request: stop_status

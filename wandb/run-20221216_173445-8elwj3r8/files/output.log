@@ -1,0 +1,22 @@
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+Number of training examples: 111
+Number of validation examples: 14
+/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/utilities/distributed.py:25: UserWarning: MASTER_ADDR environment variable is not defined. Set as localhost
+  warnings.warn(*args, **kwargs)
+initializing ddp: GLOBAL_RANK: 0, MEMBER: 1/2
+----------------------------------------------------------------------------------------------------
+distributed_backend=ddp_spawn
+All DDP processes registered. Starting ddp with 2 processes
+----------------------------------------------------------------------------------------------------
+  | Name  | Type                             | Params
+-----------------------------------------------------------
+0 | model | DeformableDetrForObjectDetection | 40 M
+/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/utilities/distributed.py:25: UserWarning: You are using `distributed_backend=ddp_spawn` with num_workers=0. For much faster performance, switch to `distributed_backend=ddp` and set `num_workers>0`
+  warnings.warn(*args, **kwargs)

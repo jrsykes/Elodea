@@ -1,0 +1,272 @@
+{
+    "os": "Linux-5.4.0-135-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.15",
+    "heartbeatAt": "2022-12-16T16:47:13.244822",
+    "startedAt": "2022-12-16T16:47:12.494242",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/jrsykes/Elodea.git",
+        "commit": "f3dedaffeaf4952492c4853d5ba7c6584b5304a6"
+    },
+    "email": "jamie.sykes@york.ac.uk",
+    "root": "/home/userfs/j/jrs596/scripts/Elodea",
+    "host": "csgpu2.cs.york.ac.uk",
+    "username": "jrs596",
+    "executable": "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/bin/python3",
+    "cpu_count": 20,
+    "cpu_count_logical": 40,
+    "cpu_freq": {
+        "current": 1885.8533750000006,
+        "min": 800.0,
+        "max": 3000.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1335.544,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2545.813,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 1100.0,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2525.677,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 1468.59,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2697.036,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2697.937,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 800.076,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 800.12,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2700.991,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 800.586,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 800.004,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 800.232,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2653.804,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2683.95,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 800.09,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2511.071,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2497.119,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2653.211,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 1385.082,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2562.846,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 1100.073,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2562.852,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 1433.087,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2562.848,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2562.84,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 799.999,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 800.121,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 800.009,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2671.157,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 800.59,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 801.862,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 800.009,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2656.039,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2674.056,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 800.602,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2263.255,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2676.169,
+            "min": 800.0,
+            "max": 3000.0
+        },
+        {
+            "current": 2610.262,
+            "min": 800.0,
+            "max": 3000.0
+        }
+    ],
+    "disk": {
+        "total": 86.169921875,
+        "used": 35.697628021240234
+    },
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpu_count": 8,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        },
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        },
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        },
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        },
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        },
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        },
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        },
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        }
+    ],
+    "memory": {
+        "total": 187.5677032470703
+    }
+}

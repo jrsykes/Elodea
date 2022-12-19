@@ -1,0 +1,25 @@
+/local/scratch/jrs596/envs/d-detr2/lib/python3.7/site-packages/transformers/models/detr/image_processing_detr.py:776: FutureWarning: The `max_size` parameter is deprecated and will be removed in v4.26. Please specify in `size['longest_edge'] instead`.
+  FutureWarning,
+Learning... |                                | 0/28/local/scratch/jrs596/envs/d-detr2/lib/python3.7/site-packages/transformers/models/detr/image_processing_detr.py:859: FutureWarning: The `max_size` parameter is deprecated and will be removed in v4.26. Please specify in `size['longest_edge'] instead`.
+  FutureWarning,
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+Number of training examples: 111
+Number of validation examples: 14
+Epoch 99
+----------
+Patience: 50/50
+train
+/local/scratch/jrs596/envs/d-detr2/lib/python3.7/site-packages/transformers/models/detr/image_processing_detr.py:941: FutureWarning: This method is deprecated and will be removed in v4.27.0. Please use pad instead.
+  "This method is deprecated and will be removed in v4.27.0. Please use pad instead.", FutureWarning
+[?25h
+tensor([[100, 134],
+        [ 50,  67],
+        [ 25,  34],
+        [ 13,  17]], device='cuda:0')

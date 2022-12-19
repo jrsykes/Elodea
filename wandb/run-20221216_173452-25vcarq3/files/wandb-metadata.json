@@ -1,0 +1,108 @@
+{
+    "os": "Linux-5.4.0-135-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.15",
+    "heartbeatAt": "2022-12-16T17:34:52.763892",
+    "startedAt": "2022-12-16T17:34:52.048129",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/jrsykes/Elodea.git",
+        "commit": "f3dedaffeaf4952492c4853d5ba7c6584b5304a6"
+    },
+    "email": "jamie.sykes@york.ac.uk",
+    "root": "/home/userfs/j/jrs596/scripts/Elodea",
+    "host": "csgpu5.cs.york.ac.uk",
+    "username": "jrs596",
+    "executable": "/local/scratch/jrs596/envs/def_detr_pl/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 4348.816750000001,
+        "min": 800.0,
+        "max": 4700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4371.024,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4393.277,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4335.558,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4393.809,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4367.095,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4363.066,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4137.456,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4317.017,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4377.661,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4380.424,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4361.485,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4387.929,
+            "min": 800.0,
+            "max": 4700.0
+        }
+    ],
+    "disk": {
+        "total": 95.56354522705078,
+        "used": 56.36170196533203
+    },
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        },
+        {
+            "name": "Quadro P6000",
+            "memory_total": 25769803776
+        }
+    ],
+    "memory": {
+        "total": 31.298721313476562
+    }
+}

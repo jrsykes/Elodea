@@ -1,0 +1,30 @@
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+Number of training examples: 111
+Number of validation examples: 14
+Some weights of DeformableDetrForObjectDetection were not initialized from the model checkpoint at SenseTime/deformable-detr and are newly initialized because the shapes did not match:
+- class_embed.0.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.0.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.1.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.1.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.2.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.2.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.3.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.3.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.4.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.4.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.5.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.5.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/utilities/distributed.py:25: UserWarning: You requested multiple GPUs but did not specify a backend, e.g. Trainer(distributed_backend=dp) (or ddp, ddp2). Setting distributed_backend=ddp_spawn for you.
+  warnings.warn(*args, **kwargs)
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+CUDA_VISIBLE_DEVICES: [0,1,2,3,4,5,6,7]
+/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/utilities/distributed.py:25: RuntimeWarning: You have defined a `val_dataloader()` and have defined a `validation_step()`, you may also want to define `validation_epoch_end()` for accumulating stats.

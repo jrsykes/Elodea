@@ -2,13 +2,13 @@
 #%%
 import torchvision
 import os
-from transformers import DetrFeatureExtractor
 import numpy as np
 import os
 from PIL import Image, ImageDraw
 import pytorch_lightning as pl
-from transformers import DeformableDetrForObjectDetection, AutoImageProcessor
-
+os.environ['TRANSFORMERS_CACHE'] = "/local/scratch/jrs596/TRANSFORMERS_CACHE"
+from transformers import DetrFeatureExtractor
+from transformers import DeformableDetrForObjectDetection
 import torch
 import wandb
 from pytorch_lightning import Trainer
@@ -61,7 +61,6 @@ class DDetr(pl.LightningModule):
       pixel_values = batch["pixel_values"]
       pixel_mask = batch["pixel_mask"]
       labels = [{k: v.to(self.device) for k, v in t.items()} for t in batch["labels"]]
-
 
       outputs = self.model(pixel_values=pixel_values, pixel_mask=pixel_mask, labels=labels)
       loss = outputs.loss
@@ -120,7 +119,8 @@ def main():
   
   #print(outputs.logits.shape)
  
-  trainer = Trainer(accelerator='gpu', devices=1, gradient_clip_val=0.1, default_root_dir=os.path.join(root, name), max_epochs=10000)
+  
+  trainer = Trainer(gpus=1, gradient_clip_val=0.1, default_root_dir=os.path.join(root, name), max_epochs=4)#10000)
 
   trainer.fit(model)
 #%%
@@ -129,8 +129,11 @@ wandb.init(project="Rudder2", entity="frankslab")
 
 feature_extractor = DetrFeatureExtractor.from_pretrained("facebook/detr-resnet-50")
 
-train_dataset = CocoDetection(img_folder='/local/scratch/jrs596/dat/ElodeaProject/BB4_combined_split/train', feature_extractor=feature_extractor)
-val_dataset = CocoDetection(img_folder='/local/scratch/jrs596/dat/ElodeaProject/BB4_combined_split/val', feature_extractor=feature_extractor, train=False)
+#train_dataset = CocoDetection(img_folder='/local/scratch/jrs596/dat/ElodeaProject/BB4_combined_split/train', feature_extractor=feature_extractor)
+#val_dataset = CocoDetection(img_folder='/local/scratch/jrs596/dat/ElodeaProject/BB4_combined_split/val', feature_extractor=feature_extractor, train=False)
+
+train_dataset = CocoDetection(img_folder='/local/scratch/jrs596/dat/balloon/train', feature_extractor=feature_extractor)
+val_dataset = CocoDetection(img_folder='/local/scratch/jrs596/dat/balloon/val', feature_extractor=feature_extractor, train=False)
 # %%
 print("Number of training examples:", len(train_dataset))
 print("Number of validation examples:", len(val_dataset))
@@ -154,8 +157,8 @@ id2label = {k: v['name'] for k,v in cats.items()}
 #   draw.rectangle((x,y,x+w,y+h), outline='red', width=1)
 #   draw.text((x, y), id2label[class_idx], fill='white')
 
-train_dataloader = DataLoader(train_dataset, collate_fn=collate_fn, batch_size=4, shuffle=True, num_workers=1)
-val_dataloader = DataLoader(val_dataset, collate_fn=collate_fn, batch_size=4)
+train_dataloader = DataLoader(train_dataset, collate_fn=collate_fn, batch_size=2, shuffle=True, num_workers=4)
+val_dataloader = DataLoader(val_dataset, collate_fn=collate_fn, batch_size=2)
 #batch = next(iter(train_dataloader))
 
 

@@ -1,0 +1,26 @@
+2022-12-15 13:03:57,146 INFO    MainThread:10582 [wandb_setup.py:_flush():68] Configure stats pid to 10582
+2022-12-15 13:03:57,146 INFO    MainThread:10582 [wandb_setup.py:_flush():68] Loading settings from /home/userfs/j/jrs596/.config/wandb/settings
+2022-12-15 13:03:57,147 INFO    MainThread:10582 [wandb_setup.py:_flush():68] Loading settings from /home/userfs/j/jrs596/scripts/Elodea/wandb/settings
+2022-12-15 13:03:57,148 INFO    MainThread:10582 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2022-12-15 13:03:57,149 INFO    MainThread:10582 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'fine_tune_d-detr3.py', 'program': '/home/userfs/j/jrs596/scripts/Elodea/fine_tune_d-detr3.py'}
+2022-12-15 13:03:57,151 INFO    MainThread:10582 [wandb_init.py:_log_setup():476] Logging user logs to /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_130357-3o2ccgee/logs/debug.log
+2022-12-15 13:03:57,152 INFO    MainThread:10582 [wandb_init.py:_log_setup():477] Logging internal logs to /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_130357-3o2ccgee/logs/debug-internal.log
+2022-12-15 13:03:57,153 INFO    MainThread:10582 [wandb_init.py:init():516] calling init triggers
+2022-12-15 13:03:57,154 INFO    MainThread:10582 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {}
+2022-12-15 13:03:57,155 INFO    MainThread:10582 [wandb_init.py:init():569] starting backend
+2022-12-15 13:03:57,156 INFO    MainThread:10582 [wandb_init.py:init():573] setting up manager
+2022-12-15 13:03:57,186 INFO    MainThread:10582 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-12-15 13:03:57,198 INFO    MainThread:10582 [wandb_init.py:init():580] backend started and connected
+2022-12-15 13:03:57,210 INFO    MainThread:10582 [wandb_init.py:init():658] updated telemetry
+2022-12-15 13:03:57,247 INFO    MainThread:10582 [wandb_init.py:init():694] communicating run to backend with 60 second timeout
+2022-12-15 13:03:57,815 INFO    MainThread:10582 [wandb_run.py:_on_init():2006] communicating current version
+2022-12-15 13:03:57,879 INFO    MainThread:10582 [wandb_run.py:_on_init():2010] got version response upgrade_message: "wandb version 0.13.7 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2022-12-15 13:03:57,879 INFO    MainThread:10582 [wandb_init.py:init():728] starting run threads in backend
+2022-12-15 13:04:00,248 INFO    MainThread:10582 [wandb_run.py:_console_start():1986] atexit reg
+2022-12-15 13:04:00,248 INFO    MainThread:10582 [wandb_run.py:_redirect():1844] redirect: SettingsConsole.WRAP_RAW
+2022-12-15 13:04:00,248 INFO    MainThread:10582 [wandb_run.py:_redirect():1909] Wrapping output streams.
+2022-12-15 13:04:00,248 INFO    MainThread:10582 [wandb_run.py:_redirect():1931] Redirects installed.
+2022-12-15 13:04:00,249 INFO    MainThread:10582 [wandb_init.py:init():765] run started, returning control to user process
+2022-12-15 13:04:35,658 WARNING MsgRouterThr:10582 [router.py:message_loop():77] message_loop has been closed

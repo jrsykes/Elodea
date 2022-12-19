@@ -1,0 +1,169 @@
+2022-12-15 11:20:35,639 INFO    StreamThr :28449 [internal.py:wandb_internal():90] W&B internal server running at pid: 28449, started at: 2022-12-15 11:20:35.637985
+2022-12-15 11:20:35,641 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: status
+2022-12-15 11:20:35,667 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: status
+2022-12-15 11:20:35,673 DEBUG   SenderThread:28449 [sender.py:send():303] send: header
+2022-12-15 11:20:35,673 INFO    WriterThread:28449 [datastore.py:open_for_write():75] open: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/run-juc7z22l.wandb
+2022-12-15 11:20:35,697 DEBUG   SenderThread:28449 [sender.py:send():303] send: run
+2022-12-15 11:20:36,106 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: check_version
+2022-12-15 11:20:36,107 INFO    SenderThread:28449 [dir_watcher.py:__init__():216] watching files in: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files
+2022-12-15 11:20:36,107 INFO    SenderThread:28449 [sender.py:_start_run_threads():931] run started: juc7z22l with start time 1671103235.665014
+2022-12-15 11:20:36,107 DEBUG   SenderThread:28449 [sender.py:send():303] send: summary
+2022-12-15 11:20:36,110 INFO    SenderThread:28449 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-15 11:20:36,110 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: check_version
+2022-12-15 11:20:36,167 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: run_start
+2022-12-15 11:20:36,173 DEBUG   HandlerThread:28449 [system_info.py:__init__():31] System info init
+2022-12-15 11:20:36,173 DEBUG   HandlerThread:28449 [system_info.py:__init__():46] System info init done
+2022-12-15 11:20:36,174 INFO    HandlerThread:28449 [system_monitor.py:start():150] Starting system monitor
+2022-12-15 11:20:36,175 INFO    SystemMonitor:28449 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-12-15 11:20:36,175 INFO    HandlerThread:28449 [system_monitor.py:probe():171] Collecting system info
+2022-12-15 11:20:36,175 INFO    SystemMonitor:28449 [interfaces.py:start():168] Started cpu
+2022-12-15 11:20:36,177 INFO    SystemMonitor:28449 [interfaces.py:start():168] Started disk
+2022-12-15 11:20:36,177 INFO    SystemMonitor:28449 [interfaces.py:start():168] Started gpu
+2022-12-15 11:20:36,180 INFO    SystemMonitor:28449 [interfaces.py:start():168] Started memory
+2022-12-15 11:20:36,180 INFO    SystemMonitor:28449 [interfaces.py:start():168] Started network
+2022-12-15 11:20:36,200 DEBUG   HandlerThread:28449 [system_info.py:probe():195] Probing system
+2022-12-15 11:20:36,201 DEBUG   HandlerThread:28449 [system_info.py:_probe_git():180] Probing git
+2022-12-15 11:20:36,223 DEBUG   HandlerThread:28449 [system_info.py:_probe_git():188] Probing git done
+2022-12-15 11:20:36,223 DEBUG   HandlerThread:28449 [system_info.py:probe():241] Probing system done
+2022-12-15 11:20:36,224 DEBUG   HandlerThread:28449 [system_monitor.py:probe():180] {'os': 'Linux-5.4.0-132-generic-x86_64-with-debian-buster-sid', 'python': '3.7.15', 'heartbeatAt': '2022-12-15T11:20:36.200631', 'startedAt': '2022-12-15T11:20:35.600378', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/userfs/j/jrs596/scripts/Elodea/fine_tune_d-detr3.py', 'codePath': 'fine_tune_d-detr3.py', 'git': {'remote': 'https://github.com/jrsykes/Elodea.git', 'commit': 'f3dedaffeaf4952492c4853d5ba7c6584b5304a6'}, 'email': 'jamie.sykes@york.ac.uk', 'root': '/home/userfs/j/jrs596/scripts/Elodea', 'host': 'csgpu5.cs.york.ac.uk', 'username': 'jrs596', 'executable': '/local/scratch/jrs596/envs/d-detr2/bin/python', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 4.324833333333333, 'min': 800.0, 'max': 4700.0}, 'cpu_freq_per_core': [{'current': 4.341, 'min': 800.0, 'max': 4700.0}, {'current': 4.34, 'min': 800.0, 'max': 4700.0}, {'current': 4.34, 'min': 800.0, 'max': 4700.0}, {'current': 4.313, 'min': 800.0, 'max': 4700.0}, {'current': 4.3, 'min': 800.0, 'max': 4700.0}, {'current': 4.305, 'min': 800.0, 'max': 4700.0}, {'current': 4.324, 'min': 800.0, 'max': 4700.0}, {'current': 4.326, 'min': 800.0, 'max': 4700.0}, {'current': 4.34, 'min': 800.0, 'max': 4700.0}, {'current': 4.307, 'min': 800.0, 'max': 4700.0}, {'current': 4.329, 'min': 800.0, 'max': 4700.0}, {'current': 4.333, 'min': 800.0, 'max': 4700.0}], 'disk': {'total': 95.56354522705078, 'used': 56.5101203918457}, 'gpu': 'NVIDIA GeForce GTX 1080 Ti', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}, {'name': 'Quadro P6000', 'memory_total': 25769803776}], 'memory': {'total': 31.298721313476562}}
+2022-12-15 11:20:36,224 INFO    HandlerThread:28449 [system_monitor.py:probe():181] Finished collecting system info
+2022-12-15 11:20:36,225 INFO    HandlerThread:28449 [system_monitor.py:probe():184] Publishing system info
+2022-12-15 11:20:36,226 DEBUG   HandlerThread:28449 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2022-12-15 11:20:36,228 DEBUG   HandlerThread:28449 [system_info.py:_save_pip():67] Saving pip packages done
+2022-12-15 11:20:36,228 DEBUG   HandlerThread:28449 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2022-12-15 11:20:37,109 INFO    Thread-13 :28449 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/wandb-summary.json
+2022-12-15 11:20:37,110 INFO    Thread-13 :28449 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/requirements.txt
+2022-12-15 11:20:37,110 INFO    Thread-13 :28449 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/conda-environment.yaml
+2022-12-15 11:20:38,655 DEBUG   HandlerThread:28449 [system_info.py:_save_conda():86] Saving conda packages done
+2022-12-15 11:20:38,658 INFO    HandlerThread:28449 [system_monitor.py:probe():186] Finished publishing system info
+2022-12-15 11:20:38,683 DEBUG   SenderThread:28449 [sender.py:send():303] send: files
+2022-12-15 11:20:38,683 INFO    SenderThread:28449 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-12-15 11:20:38,692 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: stop_status
+2022-12-15 11:20:38,692 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: stop_status
+2022-12-15 11:20:38,847 DEBUG   SenderThread:28449 [sender.py:send():303] send: telemetry
+2022-12-15 11:20:39,113 INFO    Thread-13 :28449 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/conda-environment.yaml
+2022-12-15 11:20:39,114 INFO    Thread-13 :28449 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/wandb-metadata.json
+2022-12-15 11:20:39,950 INFO    Thread-16 :28449 [upload_job.py:push():143] Uploaded file /tmp/tmpcv5wk_i8wandb/2v696cmd-wandb-metadata.json
+2022-12-15 11:20:40,114 INFO    Thread-13 :28449 [dir_watcher.py:_on_file_created():275] file/dir created: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/output.log
+2022-12-15 11:20:42,115 INFO    Thread-13 :28449 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/output.log
+2022-12-15 11:20:44,119 INFO    Thread-13 :28449 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/output.log
+2022-12-15 11:20:44,274 DEBUG   SenderThread:28449 [sender.py:send():303] send: exit
+2022-12-15 11:20:44,274 INFO    SenderThread:28449 [sender.py:send_exit():442] handling exit code: 0
+2022-12-15 11:20:44,275 INFO    SenderThread:28449 [sender.py:send_exit():444] handling runtime: 8
+2022-12-15 11:20:44,278 INFO    SenderThread:28449 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-15 11:20:44,278 INFO    SenderThread:28449 [sender.py:send_exit():450] send defer
+2022-12-15 11:20:44,279 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:44,280 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 0
+2022-12-15 11:20:44,280 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:44,281 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 0
+2022-12-15 11:20:44,282 INFO    SenderThread:28449 [sender.py:transition_state():463] send defer: 1
+2022-12-15 11:20:44,282 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:44,283 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 1
+2022-12-15 11:20:44,284 INFO    HandlerThread:28449 [system_monitor.py:finish():160] Stopping system monitor
+2022-12-15 11:20:44,285 DEBUG   SystemMonitor:28449 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-12-15 11:20:44,285 DEBUG   SystemMonitor:28449 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2022-12-15 11:20:44,285 DEBUG   SystemMonitor:28449 [system_monitor.py:_start():141] Publishing last batch of metrics
+2022-12-15 11:20:44,285 INFO    HandlerThread:28449 [interfaces.py:finish():175] Joined cpu
+2022-12-15 11:20:44,287 INFO    HandlerThread:28449 [interfaces.py:finish():175] Joined disk
+2022-12-15 11:20:44,343 INFO    HandlerThread:28449 [interfaces.py:finish():175] Joined gpu
+2022-12-15 11:20:44,343 INFO    HandlerThread:28449 [interfaces.py:finish():175] Joined memory
+2022-12-15 11:20:44,344 INFO    HandlerThread:28449 [interfaces.py:finish():175] Joined network
+2022-12-15 11:20:44,344 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:44,345 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 1
+2022-12-15 11:20:44,346 INFO    SenderThread:28449 [sender.py:transition_state():463] send defer: 2
+2022-12-15 11:20:44,346 DEBUG   SenderThread:28449 [sender.py:send():303] send: stats
+2022-12-15 11:20:44,346 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:44,348 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 2
+2022-12-15 11:20:44,348 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:44,349 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 2
+2022-12-15 11:20:44,349 INFO    SenderThread:28449 [sender.py:transition_state():463] send defer: 3
+2022-12-15 11:20:44,350 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:44,351 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 3
+2022-12-15 11:20:44,351 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:44,351 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 3
+2022-12-15 11:20:44,352 INFO    SenderThread:28449 [sender.py:transition_state():463] send defer: 4
+2022-12-15 11:20:44,352 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:44,353 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 4
+2022-12-15 11:20:44,354 DEBUG   SenderThread:28449 [sender.py:send():303] send: summary
+2022-12-15 11:20:44,357 INFO    SenderThread:28449 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-15 11:20:44,357 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:44,357 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 4
+2022-12-15 11:20:44,358 INFO    SenderThread:28449 [sender.py:transition_state():463] send defer: 5
+2022-12-15 11:20:44,359 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:44,359 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 5
+2022-12-15 11:20:44,360 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:44,360 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 5
+2022-12-15 11:20:44,552 INFO    SenderThread:28449 [sender.py:transition_state():463] send defer: 6
+2022-12-15 11:20:44,553 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:44,553 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 6
+2022-12-15 11:20:44,554 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:44,555 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 6
+2022-12-15 11:20:45,121 INFO    Thread-13 :28449 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/wandb-summary.json
+2022-12-15 11:20:45,121 INFO    Thread-13 :28449 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/config.yaml
+2022-12-15 11:20:45,275 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-15 11:20:46,122 INFO    Thread-13 :28449 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/output.log
+2022-12-15 11:20:47,149 INFO    SenderThread:28449 [sender.py:transition_state():463] send defer: 7
+2022-12-15 11:20:47,149 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: poll_exit
+2022-12-15 11:20:47,150 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:47,151 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 7
+2022-12-15 11:20:47,152 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:47,153 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 7
+2022-12-15 11:20:47,154 INFO    SenderThread:28449 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-12-15 11:20:48,124 INFO    SenderThread:28449 [dir_watcher.py:_on_file_modified():292] file/dir modified: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/output.log
+2022-12-15 11:20:48,124 INFO    SenderThread:28449 [dir_watcher.py:finish():392] scan: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files
+2022-12-15 11:20:48,125 INFO    SenderThread:28449 [dir_watcher.py:finish():406] scan save: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/config.yaml config.yaml
+2022-12-15 11:20:48,126 INFO    SenderThread:28449 [dir_watcher.py:finish():406] scan save: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/wandb-summary.json wandb-summary.json
+2022-12-15 11:20:48,128 INFO    SenderThread:28449 [dir_watcher.py:finish():406] scan save: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/requirements.txt requirements.txt
+2022-12-15 11:20:48,128 INFO    SenderThread:28449 [dir_watcher.py:finish():406] scan save: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/conda-environment.yaml conda-environment.yaml
+2022-12-15 11:20:48,134 INFO    SenderThread:28449 [dir_watcher.py:finish():406] scan save: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/wandb-metadata.json wandb-metadata.json
+2022-12-15 11:20:48,134 INFO    SenderThread:28449 [dir_watcher.py:finish():406] scan save: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/output.log output.log
+2022-12-15 11:20:48,177 INFO    SenderThread:28449 [sender.py:transition_state():463] send defer: 8
+2022-12-15 11:20:48,179 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:48,179 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 8
+2022-12-15 11:20:48,180 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:48,181 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 8
+2022-12-15 11:20:48,181 INFO    SenderThread:28449 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-15 11:20:48,654 INFO    Thread-20 :28449 [upload_job.py:push():143] Uploaded file /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/conda-environment.yaml
+2022-12-15 11:20:48,656 INFO    Thread-17 :28449 [upload_job.py:push():143] Uploaded file /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/config.yaml
+2022-12-15 11:20:48,664 INFO    Thread-18 :28449 [upload_job.py:push():143] Uploaded file /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/wandb-summary.json
+2022-12-15 11:20:48,685 INFO    Thread-19 :28449 [upload_job.py:push():143] Uploaded file /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/requirements.txt
+2022-12-15 11:20:48,698 INFO    Thread-21 :28449 [upload_job.py:push():143] Uploaded file /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/files/output.log
+2022-12-15 11:20:48,898 INFO    Thread-12 :28449 [sender.py:transition_state():463] send defer: 9
+2022-12-15 11:20:48,899 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:48,900 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 9
+2022-12-15 11:20:48,901 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:48,902 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 9
+2022-12-15 11:20:48,903 INFO    SenderThread:28449 [file_pusher.py:join():173] waiting for file pusher
+2022-12-15 11:20:48,904 INFO    SenderThread:28449 [sender.py:transition_state():463] send defer: 10
+2022-12-15 11:20:48,905 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:48,906 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 10
+2022-12-15 11:20:48,907 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:48,908 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 10
+2022-12-15 11:20:49,045 INFO    SenderThread:28449 [sender.py:transition_state():463] send defer: 11
+2022-12-15 11:20:49,046 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:49,047 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 11
+2022-12-15 11:20:49,048 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:49,049 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 11
+2022-12-15 11:20:49,050 INFO    SenderThread:28449 [sender.py:transition_state():463] send defer: 12
+2022-12-15 11:20:49,052 DEBUG   SenderThread:28449 [sender.py:send():303] send: final
+2022-12-15 11:20:49,052 DEBUG   SenderThread:28449 [sender.py:send():303] send: footer
+2022-12-15 11:20:49,053 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: defer
+2022-12-15 11:20:49,054 INFO    HandlerThread:28449 [handler.py:handle_request_defer():162] handle defer: 12
+2022-12-15 11:20:49,055 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: defer
+2022-12-15 11:20:49,056 INFO    SenderThread:28449 [sender.py:send_request_defer():459] handle sender defer: 12
+2022-12-15 11:20:49,059 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-15 11:20:49,060 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: poll_exit
+2022-12-15 11:20:49,062 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: server_info
+2022-12-15 11:20:49,063 DEBUG   SenderThread:28449 [sender.py:send_request():317] send_request: server_info
+2022-12-15 11:20:49,070 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: get_summary
+2022-12-15 11:20:49,073 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: sampled_history
+2022-12-15 11:20:49,405 INFO    MainThread:28449 [wandb_run.py:_footer_history_summary_info():3408] rendering history
+2022-12-15 11:20:49,406 INFO    MainThread:28449 [wandb_run.py:_footer_history_summary_info():3440] rendering summary
+2022-12-15 11:20:49,407 INFO    MainThread:28449 [wandb_run.py:_footer_sync_info():3364] logging synced files
+2022-12-15 11:20:49,409 DEBUG   HandlerThread:28449 [handler.py:handle_request():139] handle_request: shutdown
+2022-12-15 11:20:49,409 INFO    HandlerThread:28449 [handler.py:finish():814] shutting down handler
+2022-12-15 11:20:50,052 INFO    WriterThread:28449 [datastore.py:close():279] close: /home/userfs/j/jrs596/scripts/Elodea/wandb/run-20221215_112035-juc7z22l/run-juc7z22l.wandb
+2022-12-15 11:20:50,405 INFO    SenderThread:28449 [sender.py:finish():1331] shutting down sender
+2022-12-15 11:20:50,405 INFO    SenderThread:28449 [file_pusher.py:finish():168] shutting down file pusher
+2022-12-15 11:20:50,406 INFO    SenderThread:28449 [file_pusher.py:join():173] waiting for file pusher
+2022-12-15 11:20:50,414 INFO    MainThread:28449 [internal.py:handle_exit():77] Internal process exited

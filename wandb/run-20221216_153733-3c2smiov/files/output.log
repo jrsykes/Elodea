@@ -1,0 +1,76 @@
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+Number of training examples: 111
+Number of validation examples: 14
+Downloading: "https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-rsb-weights/resnet50_a1_0-14fe96d1.pth" to /run/user/160901/cache/torch/hub/checkpoints/resnet50_a1_0-14fe96d1.pth
+Some weights of DeformableDetrForObjectDetection were not initialized from the model checkpoint at SenseTime/deformable-detr and are newly initialized because the shapes did not match:
+- class_embed.0.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.0.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.1.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.1.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.2.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.2.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.3.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.3.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.4.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.4.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.5.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.5.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+CUDA_VISIBLE_DEVICES: [0]
+/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/utilities/distributed.py:25: RuntimeWarning: You have defined a `val_dataloader()` and have defined a `validation_step()`, you may also want to define `validation_epoch_end()` for accumulating stats.
+  warnings.warn(*args, **kwargs)
+Validation sanity check: 0it [00:00, ?it/s]
+  | Name  | Type                             | Params
+-----------------------------------------------------------
+0 | model | DeformableDetrForObjectDetection | 40 M
+/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/utilities/distributed.py:25: UserWarning: The dataloader, val dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 12 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  warnings.warn(*args, **kwargs)
+/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at ../aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Traceback (most recent call last):
+  File "/home/userfs/j/jrs596/scripts/Elodea/fine_tune_d-detr2.py", line 173, in <module>
+    main()
+  File "/home/userfs/j/jrs596/scripts/Elodea/fine_tune_d-detr2.py", line 125, in main
+    trainer.fit(model)
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1003, in fit
+    results = self.single_gpu_train(model)
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/trainer/distrib_parts.py", line 186, in single_gpu_train
+    results = self.run_pretrain_routine(model)
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1196, in run_pretrain_routine
+    False)
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/trainer/evaluation_loop.py", line 293, in _evaluate
+    output = self.evaluation_forward(model, batch, batch_idx, dataloader_idx, test_mode)
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/trainer/evaluation_loop.py", line 470, in evaluation_forward
+    output = model.validation_step(*args)
+  File "/home/userfs/j/jrs596/scripts/Elodea/fine_tune_d-detr2.py", line 83, in validation_step
+    loss, loss_dict = self.common_step(batch, batch_idx)
+  File "/home/userfs/j/jrs596/scripts/Elodea/fine_tune_d-detr2.py", line 65, in common_step
+    outputs = self.model(pixel_values=pixel_values, pixel_mask=pixel_mask, labels=labels)
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/transformers/models/deformable_detr/modeling_deformable_detr.py", line 1971, in forward
+    loss_dict = criterion(outputs_loss, labels)
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/transformers/models/deformable_detr/modeling_deformable_detr.py", line 2204, in forward
+    indices = self.matcher(outputs_without_aux, targets)
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1190, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/transformers/models/deformable_detr/modeling_deformable_detr.py", line 2345, in forward
+    indices = [linear_sum_assignment(c[i]) for i, c in enumerate(cost_matrix.split(sizes, -1))]
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/transformers/models/deformable_detr/modeling_deformable_detr.py", line 2345, in <listcomp>
+    indices = [linear_sum_assignment(c[i]) for i, c in enumerate(cost_matrix.split(sizes, -1))]
+  File "/local/scratch/jrs596/envs/def_detr_pl/lib/python3.7/site-packages/scipy/optimize/_lsap.py", line 100, in linear_sum_assignment
+    return _lsap_module.calculate_assignment(cost_matrix)
+ValueError: matrix contains invalid numeric entries

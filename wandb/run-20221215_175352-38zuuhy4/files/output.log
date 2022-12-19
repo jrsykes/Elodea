@@ -1,0 +1,91 @@
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+Number of training examples: 111
+Number of validation examples: 14
+Some weights of DeformableDetrForObjectDetection were not initialized from the model checkpoint at SenseTime/deformable-detr and are newly initialized because the shapes did not match:
+- class_embed.0.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.0.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.1.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.1.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.2.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.2.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.3.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.3.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.4.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.4.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+- class_embed.5.weight: found shape torch.Size([91, 256]) in the checkpoint and torch.Size([1, 256]) in the model instantiated
+- class_embed.5.bias: found shape torch.Size([91]) in the checkpoint and torch.Size([1]) in the model instantiated
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+GPU available: True, used: True
+TPU available: False, using: 0 TPU cores
+CUDA_VISIBLE_DEVICES: [0]
+/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/utilities/distributed.py:25: RuntimeWarning: You have defined a `val_dataloader()` and have defined a `validation_step()`, you may also want to define `validation_epoch_end()` for accumulating stats.
+  warnings.warn(*args, **kwargs)
+Validation sanity check: 0it [00:00, ?it/s]
+  | Name  | Type                             | Params
+-----------------------------------------------------------
+0 | model | DeformableDetrForObjectDetection | 40 M
+/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/utilities/distributed.py:25: UserWarning: The dataloader, val dataloader 0, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 40 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  warnings.warn(*args, **kwargs)
+/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at /opt/conda/conda-bld/pytorch_1670525541035/work/aten/src/ATen/native/TensorShape.cpp:3190.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Traceback (most recent call last):
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/userfs/j/jrs596/.vscode-server/extensions/ms-python.python-2022.20.1/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 39, in <module>
+    cli.main()
+  File "/home/userfs/j/jrs596/.vscode-server/extensions/ms-python.python-2022.20.1/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 430, in main
+    run()
+  File "/home/userfs/j/jrs596/.vscode-server/extensions/ms-python.python-2022.20.1/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "/home/userfs/j/jrs596/.vscode-server/extensions/ms-python.python-2022.20.1/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 322, in run_path
+    pkg_name=pkg_name, script_name=fname)
+  File "/home/userfs/j/jrs596/.vscode-server/extensions/ms-python.python-2022.20.1/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 136, in _run_module_code
+    mod_name, mod_spec, pkg_name, script_name)
+  File "/home/userfs/j/jrs596/.vscode-server/extensions/ms-python.python-2022.20.1/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+  File "/home/userfs/j/jrs596/scripts/Elodea/fine_tune_d-detr2.py", line 170, in <module>
+    main()
+  File "/home/userfs/j/jrs596/scripts/Elodea/fine_tune_d-detr2.py", line 125, in main
+    trainer.fit(model)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1003, in fit
+    results = self.single_gpu_train(model)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/trainer/distrib_parts.py", line 186, in single_gpu_train
+    results = self.run_pretrain_routine(model)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py", line 1196, in run_pretrain_routine
+    False)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/trainer/evaluation_loop.py", line 293, in _evaluate
+    output = self.evaluation_forward(model, batch, batch_idx, dataloader_idx, test_mode)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/trainer/evaluation_loop.py", line 470, in evaluation_forward
+    output = model.validation_step(*args)
+  File "/home/userfs/j/jrs596/scripts/Elodea/fine_tune_d-detr2.py", line 83, in validation_step
+    loss, loss_dict = self.common_step(batch, batch_idx)
+  File "/home/userfs/j/jrs596/scripts/Elodea/fine_tune_d-detr2.py", line 65, in common_step
+    outputs = self.model(pixel_values=pixel_values, pixel_mask=pixel_mask, labels=labels)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/transformers/models/deformable_detr/modeling_deformable_detr.py", line 1971, in forward
+    loss_dict = criterion(outputs_loss, labels)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/transformers/models/deformable_detr/modeling_deformable_detr.py", line 2204, in forward
+    indices = self.matcher(outputs_without_aux, targets)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1194, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/transformers/models/deformable_detr/modeling_deformable_detr.py", line 2338, in forward
+    giou_cost = -generalized_box_iou(center_to_corners_format(out_bbox), center_to_corners_format(target_bbox))
+  File "/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/transformers/models/deformable_detr/modeling_deformable_detr.py", line 2402, in generalized_box_iou
+    if not (boxes1[:, 2:] >= boxes1[:, :2]).all():
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.

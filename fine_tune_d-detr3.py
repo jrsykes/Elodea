@@ -1,40 +1,38 @@
+#%%
 from __future__ import print_function
 from __future__ import division
 import torch
-import torch.nn as nn
-import torch.optim as optim
-import numpy as np
+#import torch.nn as nn
+#import torch.optim as optim
+#import numpy as np
 import torchvision
-from torchvision import datasets, models, transforms
+#from torchvision import datasets, models, transforms
 import time
 import os
 import copy
-from torch.utils.tensorboard import SummaryWriter
+#from torch.utils.tensorboard import SummaryWriter
 import pickle
-import numpy as np
+#import numpy as np
 from sklearn import metrics
 from progress.bar import Bar
-#from torchvision.models import ConvNeXt_Tiny_Weights, ResNet18_Weights, ResNet50_Weights, ResNeXt101_32X8D_Weights
-from torch.utils.mobile_optimizer import optimize_for_mobile
+#from torch.utils.mobile_optimizer import optimize_for_mobile
+
+os.environ['TRANSFORMERS_CACHE'] = "/scratch/staff/jrs596/TRANSFORMERS_CACHE"
+
 from transformers import DeformableDetrForObjectDetection, DetrFeatureExtractor
 import wandb
 
 import sys
 import argparse
-
-#from ConvNext_tiny_quantised import convnext_tiny as convnext_tiny_q
-#from ConvNext_tiny_quantised import ConvNeXt_Tiny_Weights as ConvNeXt_Tiny_Weights_q
-
-
 from torch.utils.data import DataLoader
 
-
+#%%
 parser = argparse.ArgumentParser('encoder decoder examiner')
 parser.add_argument('--model_name', type=str, default='rudder_ddetr',
                         help='save name for model')
-parser.add_argument('--root', type=str, default='/local/scratch/jrs596/dat/ElodeaProject',
+parser.add_argument('--root', type=str, default='/scratch/staff/jrs596/dat/',
                         help='location of all data')
-parser.add_argument('--data_dir', type=str, default='BB4_combined_split',
+parser.add_argument('--data_dir', type=str, default='balloon',
                         help='location of all data')
 parser.add_argument('--batch_size', type=int, default=4,
                         help='Batch size')
@@ -58,6 +56,8 @@ parser.add_argument('--eps', type=float, default=1e-8,
 args = parser.parse_args()
 print(args)
 
+
+
 #Define some variable and paths
 #data_dir = os.path.join(args.root, args.data_dir)
 data_dir = args.root + "/" + args.data_dir
@@ -69,8 +69,8 @@ log_dir= model_path + "/logs" + "/logs_" + args.model_name
 print('Train images: ' + str(len(os.listdir(data_dir + '/train'))-1))
 print('Val images: ' + str(len(os.listdir(data_dir + '/val'))-1))
 
-writer = SummaryWriter(log_dir=log_dir)
-
+#writer = SummaryWriter(log_dir=log_dir)
+#Define traning loop
 def train_model(model, dataloaders_dict, optimizer, patience):
     since = time.time()
     
@@ -107,7 +107,6 @@ def train_model(model, dataloaders_dict, optimizer, patience):
         for phase in ['train', 'val']:
             if phase == 'train':
                 model.train()  # Set model to training mode
-                #Experimental. Remove batch norm layer from Resnet if specified.
 
             elif phase == 'val':
                 #Model quatisation with quantisation aware training
@@ -148,9 +147,13 @@ def train_model(model, dataloaders_dict, optimizer, patience):
                         pixel_mask = batch["pixel_mask"].to(device)
                         labels = [{k: v.to(device) for k, v in t.items()} for t in batch["labels"]]
 
+                        print(pixel_values.shape)
+                        print(pixel_mask.shape)
+                        print(labels)
+                    
                         outputs = model(pixel_values=pixel_values, pixel_mask=pixel_mask, labels=labels)
                         print(outputs)
-                        exit()
+                     
                         #Calculate loss and other model metrics
                         loss = criterion(outputs, labels)
                         _, preds = torch.max(outputs, 1)    
@@ -197,18 +200,18 @@ def train_model(model, dataloaders_dict, optimizer, patience):
             print('{} Precision: {:.4f} Recall: {:.4f} F1: {:.4f}'.format(phase, epoch_precision, epoch_recall, epoch_f1))
  
             # Save statistics to tensorboard log
-            if phase == 'train':
-                writer.add_scalar("Loss/train", epoch_loss, epoch)
-                writer.add_scalar("Accuracy/train", epoch_acc, epoch)
-                writer.add_scalar("Precision/train", epoch_precision , epoch)
-                writer.add_scalar("Recall/train", epoch_recall, epoch)
-                writer.add_scalar("F1/train", epoch_f1, epoch)
-            else:
-                writer.add_scalar("Loss/val", epoch_loss, epoch)
-                writer.add_scalar("Accuracy/val", epoch_acc, epoch)
-                writer.add_scalar("Precision/val", epoch_precision , epoch)
-                writer.add_scalar("Recall/val", epoch_recall, epoch)
-                writer.add_scalar("F1/val", epoch_f1, epoch)
+            # if phase == 'train':
+            #     writer.add_scalar("Loss/train", epoch_loss, epoch)
+            #     writer.add_scalar("Accuracy/train", epoch_acc, epoch)
+            #     writer.add_scalar("Precision/train", epoch_precision , epoch)
+            #     writer.add_scalar("Recall/train", epoch_recall, epoch)
+            #     writer.add_scalar("F1/train", epoch_f1, epoch)
+            # else:
+            #     writer.add_scalar("Loss/val", epoch_loss, epoch)
+            #     writer.add_scalar("Accuracy/val", epoch_acc, epoch)
+            #     writer.add_scalar("Precision/val", epoch_precision , epoch)
+            #     writer.add_scalar("Recall/val", epoch_recall, epoch)
+            #     writer.add_scalar("F1/val", epoch_f1, epoch)
               
             
             # Save model and update best weights only if recall has improved
@@ -227,21 +230,12 @@ def train_model(model, dataloaders_dict, optimizer, patience):
                  
                 PATH = os.path.join(model_path, args.model_name)
                 
-
-                if args.quantise == False:
-                    with open(PATH + '.pkl', 'wb') as f:
-                        pickle.dump(final_out, f)   
+                with open(PATH + '.pkl', 'wb') as f:
+                    pickle.dump(final_out, f)   
 
                     # Save the whole model with pytorch save function
-                    torch.save(model.module, PATH + '.pth')
+                torch.save(model.module, PATH + '.pth')
 
-                else:
-                    # Convert the quantized model to torchscipt and optmize for mobile platforms
-                    torchscript_model = torch.jit.script(quantized_model)
-                    torch.jit.save(torchscript_model, PATH + '.pth')
-                    optimized_torchscript_model = optimize_for_mobile(torchscript_model)
-                    optimized_torchscript_model.save(PATH + "_mobile.pth")
-                    optimized_torchscript_model._save_for_lite_interpreter(PATH + "_mobile.ptl")
 
             if phase == 'val':
                 val_loss_history.append(epoch_loss)
@@ -256,19 +250,8 @@ def train_model(model, dataloaders_dict, optimizer, patience):
     #model.load_state_dict(best_model_wts)
     
     #Flush and close tensorbaord writer
-    writer.flush()
-    writer.close()
-
-#    if args.quantise == True:
-#        return quantized_model
-#    else:
-#        return model 
-
-#
-# Specify whether to use GPU or cpu. Quantisation aware training is not yet avalable for GPU.
-device = torch.device("cuda")
-
-
+    #writer.flush()
+    #writer.close()
 
 
 class CocoDetection(torchvision.datasets.CocoDetection):
@@ -294,8 +277,8 @@ def collate_fn(batch):
   encoding = feature_extractor.pad_and_create_pixel_mask(pixel_values, return_tensors="pt")
   labels = [item[1] for item in batch]
 
-  for i in range(len(labels)):
-    labels[i]['class_labels'] = torch.tensor([0], dtype=torch.int64)
+#  for i in range(len(labels)):
+ #   labels[i]['class_labels'] = torch.tensor([0], dtype=torch.int64)
 
   batch = {}
   batch['pixel_values'] = encoding['pixel_values']
@@ -303,46 +286,43 @@ def collate_fn(batch):
   batch['labels'] = labels
   return batch
 
-
+#Instantiate model and load dataset etc
 
 model = DeformableDetrForObjectDetection.from_pretrained("SenseTime/deformable-detr",  num_labels=1, ignore_mismatched_sizes=True)
 
-wandb.init(project="Rudder2", entity="frankslab")
+#wandb.init(project="Rudder2", entity="frankslab")
 
 
 feature_extractor = DetrFeatureExtractor.from_pretrained("facebook/detr-resnet-50")
 
 train_dataset = CocoDetection(img_folder=os.path.join(args.root, args.data_dir, 'train'), feature_extractor=feature_extractor)
 val_dataset = CocoDetection(img_folder=os.path.join(args.root, args.data_dir, 'val'), feature_extractor=feature_extractor, train=False)
-# %%
-print("Number of training examples:", len(train_dataset))
-print("Number of validation examples:", len(val_dataset))
-# %%
 
+print("Number of training examples loaded:", len(train_dataset))
+print("Number of validation examples loaded:", len(val_dataset))
 
-#cats = train_dataset.coco.cats
-cats = {0: {'id': 0, 'name': 'rudder', 'supercategory': ''}}
+cats = train_dataset.coco.cats
 id2label = {k: v['name'] for k,v in cats.items()}
 
-
-train_dataloader = DataLoader(train_dataset, collate_fn=collate_fn, batch_size=4, shuffle=True, num_workers=1)
+train_dataloader = DataLoader(train_dataset, collate_fn=collate_fn, batch_size=2, shuffle=True, num_workers=1)
 val_dataloader = DataLoader(val_dataset, collate_fn=collate_fn, batch_size=4)
 
 dataloaders_dict = {'train': train_dataloader, 'val': val_dataloader}
 
-
-
 #model = nn.DataParallel(model)
+device = torch.device("cuda")
 
-#Load model onto device
 model = model.to(device)
 
 params_to_update = model.parameters()
 optimizer = torch.optim.Adam(params_to_update, lr=args.lr,
                                           weight_decay=args.weight_decay, eps=args.eps)
 
+#Train and evaluate
 
-
-# Train and evaluate
 model = train_model(model=model, dataloaders_dict=dataloaders_dict, optimizer=optimizer, patience=args.patience)
 
+
+
+
+# %%

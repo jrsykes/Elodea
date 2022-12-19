@@ -1,0 +1,17 @@
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+Number of training examples: 111
+Number of validation examples: 14
+/scratch/staff/jrs596/python_environments/envs/def_detr_pl/lib/python3.7/site-packages/pytorch_lightning/utilities/distributed.py:25: UserWarning: MASTER_ADDR environment variable is not defined. Set as localhost
+  warnings.warn(*args, **kwargs)
+initializing ddp: GLOBAL_RANK: 0, MEMBER: 1/2
+----------------------------------------------------------------------------------------------------
+distributed_backend=ddp_spawn
+All DDP processes registered. Starting ddp with 2 processes
+----------------------------------------------------------------------------------------------------
