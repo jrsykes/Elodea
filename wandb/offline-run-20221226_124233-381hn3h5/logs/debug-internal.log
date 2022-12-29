@@ -1,0 +1,156 @@
+2022-12-26 12:42:34,009 INFO    StreamThr :20495 [internal.py:wandb_internal():90] W&B internal server running at pid: 20495, started at: 2022-12-26 12:42:34.008349
+2022-12-26 12:42:34,011 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: status
+2022-12-26 12:42:34,013 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: status
+2022-12-26 12:42:34,032 INFO    WriterThread:20495 [datastore.py:open_for_write():75] open: /home/userfs/j/jrs596/scripts/Elodea/wandb/offline-run-20221226_124233-381hn3h5/run-381hn3h5.wandb
+2022-12-26 12:42:34,082 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: run_start
+2022-12-26 12:42:34,094 DEBUG   HandlerThread:20495 [system_info.py:__init__():31] System info init
+2022-12-26 12:42:34,094 DEBUG   HandlerThread:20495 [system_info.py:__init__():46] System info init done
+2022-12-26 12:42:34,094 INFO    HandlerThread:20495 [system_monitor.py:start():150] Starting system monitor
+2022-12-26 12:42:34,095 INFO    SystemMonitor:20495 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-12-26 12:42:34,095 INFO    HandlerThread:20495 [system_monitor.py:probe():171] Collecting system info
+2022-12-26 12:42:34,095 INFO    SystemMonitor:20495 [interfaces.py:start():168] Started cpu
+2022-12-26 12:42:34,098 INFO    SystemMonitor:20495 [interfaces.py:start():168] Started disk
+2022-12-26 12:42:34,098 INFO    SystemMonitor:20495 [interfaces.py:start():168] Started gpu
+2022-12-26 12:42:34,099 INFO    SystemMonitor:20495 [interfaces.py:start():168] Started memory
+2022-12-26 12:42:34,100 INFO    SystemMonitor:20495 [interfaces.py:start():168] Started network
+2022-12-26 12:42:34,141 DEBUG   HandlerThread:20495 [system_info.py:probe():195] Probing system
+2022-12-26 12:42:34,142 DEBUG   HandlerThread:20495 [system_info.py:_probe_git():180] Probing git
+2022-12-26 12:42:34,171 DEBUG   HandlerThread:20495 [system_info.py:_probe_git():188] Probing git done
+2022-12-26 12:42:34,171 DEBUG   HandlerThread:20495 [system_info.py:probe():241] Probing system done
+2022-12-26 12:42:34,172 DEBUG   HandlerThread:20495 [system_monitor.py:probe():180] {'os': 'Linux-5.4.0-135-generic-x86_64-with-debian-buster-sid', 'python': '3.7.15', 'heartbeatAt': '2022-12-26T12:42:34.141507', 'startedAt': '2022-12-26T12:42:33.970914', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': '/home/userfs/j/jrs596/scripts/Elodea/detr_inf.py', 'codePath': 'detr_inf.py', 'git': {'remote': 'https://github.com/jrsykes/Elodea.git', 'commit': '043944fdff500637a91f2f704a02195863b83caf'}, 'email': 'jamie.sykes@york.ac.uk', 'root': '/home/userfs/j/jrs596/scripts/Elodea', 'host': 'csgpu5.cs.york.ac.uk', 'username': 'jrs596', 'executable': '/local/scratch/jrs596/envs/d-detr/bin/python', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 4.119666666666666, 'min': 800.0, 'max': 4700.0}, 'cpu_freq_per_core': [{'current': 4.064, 'min': 800.0, 'max': 4700.0}, {'current': 4.065, 'min': 800.0, 'max': 4700.0}, {'current': 4.065, 'min': 800.0, 'max': 4700.0}, {'current': 4.058, 'min': 800.0, 'max': 4700.0}, {'current': 4.13, 'min': 800.0, 'max': 4700.0}, {'current': 4.122, 'min': 800.0, 'max': 4700.0}, {'current': 4.066, 'min': 800.0, 'max': 4700.0}, {'current': 4.217, 'min': 800.0, 'max': 4700.0}, {'current': 4.252, 'min': 800.0, 'max': 4700.0}, {'current': 4.263, 'min': 800.0, 'max': 4700.0}, {'current': 4.067, 'min': 800.0, 'max': 4700.0}, {'current': 4.067, 'min': 800.0, 'max': 4700.0}], 'disk': {'total': 95.56354522705078, 'used': 58.849185943603516}, 'gpu': 'NVIDIA GeForce GTX 1080 Ti', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}, {'name': 'Quadro P6000', 'memory_total': 25769803776}], 'memory': {'total': 31.298721313476562}}
+2022-12-26 12:42:34,173 INFO    HandlerThread:20495 [system_monitor.py:probe():181] Finished collecting system info
+2022-12-26 12:42:34,173 INFO    HandlerThread:20495 [system_monitor.py:probe():184] Publishing system info
+2022-12-26 12:42:34,174 DEBUG   HandlerThread:20495 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2022-12-26 12:42:34,176 DEBUG   HandlerThread:20495 [system_info.py:_save_pip():67] Saving pip packages done
+2022-12-26 12:42:34,177 DEBUG   HandlerThread:20495 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2022-12-26 12:42:35,390 DEBUG   HandlerThread:20495 [system_info.py:_save_conda():86] Saving conda packages done
+2022-12-26 12:42:35,393 INFO    HandlerThread:20495 [system_monitor.py:probe():186] Finished publishing system info
+2022-12-26 12:42:35,734 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: pause
+2022-12-26 12:42:35,734 INFO    HandlerThread:20495 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-12-26 12:42:35,734 INFO    HandlerThread:20495 [system_monitor.py:finish():160] Stopping system monitor
+2022-12-26 12:42:35,734 DEBUG   SystemMonitor:20495 [system_monitor.py:_start():130] Starting system metrics aggregation loop
+2022-12-26 12:42:35,735 INFO    HandlerThread:20495 [interfaces.py:finish():175] Joined cpu
+2022-12-26 12:42:35,735 DEBUG   SystemMonitor:20495 [system_monitor.py:_start():137] Finished system metrics aggregation loop
+2022-12-26 12:42:35,735 INFO    HandlerThread:20495 [interfaces.py:finish():175] Joined disk
+2022-12-26 12:42:35,736 DEBUG   SystemMonitor:20495 [system_monitor.py:_start():141] Publishing last batch of metrics
+2022-12-26 12:42:35,862 INFO    HandlerThread:20495 [interfaces.py:finish():175] Joined gpu
+2022-12-26 12:42:35,862 INFO    HandlerThread:20495 [interfaces.py:finish():175] Joined memory
+2022-12-26 12:42:35,863 INFO    HandlerThread:20495 [interfaces.py:finish():175] Joined network
+2022-12-26 12:42:35,864 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: resume
+2022-12-26 12:42:35,864 INFO    HandlerThread:20495 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-12-26 12:42:35,865 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: pause
+2022-12-26 12:42:35,865 INFO    HandlerThread:20495 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-12-26 12:43:12,160 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: resume
+2022-12-26 12:43:12,160 INFO    HandlerThread:20495 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-12-26 12:43:12,166 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: pause
+2022-12-26 12:43:12,166 INFO    HandlerThread:20495 [handler.py:handle_request_pause():696] stopping system metrics thread or process
+2022-12-26 12:43:28,126 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: resume
+2022-12-26 12:43:28,127 INFO    HandlerThread:20495 [handler.py:handle_request_resume():687] starting system metrics thread or process
+2022-12-26 12:43:28,189 DEBUG   SenderThread:20495 [sender.py:send():303] send: exit
+2022-12-26 12:43:28,189 INFO    SenderThread:20495 [sender.py:send_exit():442] handling exit code: 0
+2022-12-26 12:43:28,190 INFO    SenderThread:20495 [sender.py:send_exit():444] handling runtime: 1
+2022-12-26 12:43:28,191 INFO    SenderThread:20495 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-26 12:43:28,192 INFO    SenderThread:20495 [sender.py:send_exit():450] send defer
+2022-12-26 12:43:28,193 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,193 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 0
+2022-12-26 12:43:28,194 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,194 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 0
+2022-12-26 12:43:28,195 INFO    SenderThread:20495 [sender.py:transition_state():463] send defer: 1
+2022-12-26 12:43:28,196 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,197 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 1
+2022-12-26 12:43:28,198 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,198 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 1
+2022-12-26 12:43:28,198 INFO    SenderThread:20495 [sender.py:transition_state():463] send defer: 2
+2022-12-26 12:43:28,200 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,200 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 2
+2022-12-26 12:43:28,201 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,201 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 2
+2022-12-26 12:43:28,202 INFO    SenderThread:20495 [sender.py:transition_state():463] send defer: 3
+2022-12-26 12:43:28,203 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,203 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 3
+2022-12-26 12:43:28,204 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,204 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 3
+2022-12-26 12:43:28,205 INFO    SenderThread:20495 [sender.py:transition_state():463] send defer: 4
+2022-12-26 12:43:28,206 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,206 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 4
+2022-12-26 12:43:28,207 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,207 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 4
+2022-12-26 12:43:28,208 INFO    SenderThread:20495 [sender.py:transition_state():463] send defer: 5
+2022-12-26 12:43:28,209 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,209 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 5
+2022-12-26 12:43:28,210 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,210 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 5
+2022-12-26 12:43:28,211 INFO    SenderThread:20495 [sender.py:transition_state():463] send defer: 6
+2022-12-26 12:43:28,212 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,212 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 6
+2022-12-26 12:43:28,212 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,213 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 6
+2022-12-26 12:43:28,214 INFO    SenderThread:20495 [sender.py:transition_state():463] send defer: 7
+2022-12-26 12:43:28,215 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,215 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 7
+2022-12-26 12:43:28,216 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,216 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 7
+2022-12-26 12:43:28,217 INFO    SenderThread:20495 [sender.py:transition_state():463] send defer: 8
+2022-12-26 12:43:28,218 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,218 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 8
+2022-12-26 12:43:28,219 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,219 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 8
+2022-12-26 12:43:28,220 INFO    SenderThread:20495 [sender.py:transition_state():463] send defer: 9
+2022-12-26 12:43:28,221 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,221 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 9
+2022-12-26 12:43:28,222 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,222 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 9
+2022-12-26 12:43:28,223 INFO    SenderThread:20495 [sender.py:transition_state():463] send defer: 10
+2022-12-26 12:43:28,223 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,223 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 10
+2022-12-26 12:43:28,224 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,224 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 10
+2022-12-26 12:43:28,225 INFO    SenderThread:20495 [sender.py:transition_state():463] send defer: 11
+2022-12-26 12:43:28,226 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,226 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 11
+2022-12-26 12:43:28,226 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,226 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 11
+2022-12-26 12:43:28,227 INFO    SenderThread:20495 [sender.py:transition_state():463] send defer: 12
+2022-12-26 12:43:28,228 DEBUG   SenderThread:20495 [sender.py:send():303] send: final
+2022-12-26 12:43:28,228 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: defer
+2022-12-26 12:43:28,229 INFO    HandlerThread:20495 [handler.py:handle_request_defer():162] handle defer: 12
+2022-12-26 12:43:28,230 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: defer
+2022-12-26 12:43:28,230 INFO    SenderThread:20495 [sender.py:send_request_defer():459] handle sender defer: 12
+2022-12-26 12:43:28,232 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: poll_exit
+2022-12-26 12:43:28,232 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: poll_exit
+2022-12-26 12:43:28,232 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: server_info
+2022-12-26 12:43:28,233 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: get_summary
+2022-12-26 12:43:28,233 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: server_info
+2022-12-26 12:43:28,234 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: sampled_history
+2022-12-26 12:43:28,236 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: shutdown
+2022-12-26 12:43:28,236 INFO    HandlerThread:20495 [handler.py:finish():814] shutting down handler
+2022-12-26 12:43:29,228 INFO    WriterThread:20495 [datastore.py:close():279] close: /home/userfs/j/jrs596/scripts/Elodea/wandb/offline-run-20221226_124233-381hn3h5/run-381hn3h5.wandb
+2022-12-26 12:43:29,234 INFO    SenderThread:20495 [sender.py:finish():1331] shutting down sender
+2022-12-26 12:43:30,242 INFO    StreamThr :20495 [internal.py:wandb_internal():90] W&B internal server running at pid: 20495, started at: 2022-12-26 12:43:30.241046
+2022-12-26 12:43:30,247 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: status
+2022-12-26 12:43:30,248 DEBUG   SenderThread:20495 [sender.py:send_request():317] send_request: status
+2022-12-26 12:43:30,251 INFO    WriterThread:20495 [datastore.py:open_for_write():75] open: /home/userfs/j/jrs596/scripts/Elodea/wandb/offline-run-20221226_124328-2ar8xkur/run-2ar8xkur.wandb
+2022-12-26 12:43:30,252 DEBUG   HandlerThread:20495 [handler.py:handle_request():139] handle_request: run_start
+2022-12-26 12:43:30,254 DEBUG   HandlerThread:20495 [system_info.py:__init__():31] System info init
+2022-12-26 12:43:30,254 DEBUG   HandlerThread:20495 [system_info.py:__init__():46] System info init done
+2022-12-26 12:43:30,255 INFO    HandlerThread:20495 [system_monitor.py:start():150] Starting system monitor
+2022-12-26 12:43:30,256 INFO    SystemMonitor:20495 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-12-26 12:43:30,256 INFO    HandlerThread:20495 [system_monitor.py:probe():171] Collecting system info
+2022-12-26 12:43:30,258 INFO    SystemMonitor:20495 [interfaces.py:start():168] Started cpu
+2022-12-26 12:43:30,259 INFO    SystemMonitor:20495 [interfaces.py:start():168] Started disk
+2022-12-26 12:43:30,261 INFO    SystemMonitor:20495 [interfaces.py:start():168] Started gpu
+2022-12-26 12:43:30,261 INFO    SystemMonitor:20495 [interfaces.py:start():168] Started memory
+2022-12-26 12:43:30,262 INFO    SystemMonitor:20495 [interfaces.py:start():168] Started network
+2022-12-26 12:43:30,283 DEBUG   HandlerThread:20495 [system_info.py:probe():195] Probing system
+2022-12-26 12:43:30,285 DEBUG   HandlerThread:20495 [system_info.py:_probe_git():180] Probing git
+2022-12-26 12:43:30,335 DEBUG   HandlerThread:20495 [system_info.py:_probe_git():188] Probing git done
+2022-12-26 12:43:30,336 DEBUG   HandlerThread:20495 [system_info.py:probe():241] Probing system done
+2022-12-26 12:43:30,337 DEBUG   HandlerThread:20495 [system_monitor.py:probe():180] {'os': 'Linux-5.4.0-135-generic-x86_64-with-debian-buster-sid', 'python': '3.7.15', 'heartbeatAt': '2022-12-26T12:43:30.283509', 'startedAt': '2022-12-26T12:43:28.155051', 'docker': None, 'cuda': None, 'args': None, 'state': 'running', 'program': '/home/userfs/j/jrs596/scripts/Elodea/detr_inf.py', 'codePath': 'detr_inf.py', 'git': {'remote': 'https://github.com/jrsykes/Elodea.git', 'commit': '043944fdff500637a91f2f704a02195863b83caf'}, 'email': 'jamie.sykes@york.ac.uk', 'root': '/home/userfs/j/jrs596/scripts/Elodea', 'host': 'csgpu5.cs.york.ac.uk', 'username': 'jrs596', 'executable': '/local/scratch/jrs596/envs/d-detr/bin/python', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 4.279583333333334, 'min': 800.0, 'max': 4700.0}, 'cpu_freq_per_core': [{'current': 4.283, 'min': 800.0, 'max': 4700.0}, {'current': 4.297, 'min': 800.0, 'max': 4700.0}, {'current': 4.267, 'min': 800.0, 'max': 4700.0}, {'current': 4.281, 'min': 800.0, 'max': 4700.0}, {'current': 4.298, 'min': 800.0, 'max': 4700.0}, {'current': 4.28, 'min': 800.0, 'max': 4700.0}, {'current': 4.248, 'min': 800.0, 'max': 4700.0}, {'current': 4.279, 'min': 800.0, 'max': 4700.0}, {'current': 4.278, 'min': 800.0, 'max': 4700.0}, {'current': 4.291, 'min': 800.0, 'max': 4700.0}, {'current': 4.277, 'min': 800.0, 'max': 4700.0}, {'current': 4.276, 'min': 800.0, 'max': 4700.0}], 'disk': {'total': 95.56354522705078, 'used': 58.849185943603516}, 'gpu': 'NVIDIA GeForce GTX 1080 Ti', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}, {'name': 'Quadro P6000', 'memory_total': 25769803776}], 'memory': {'total': 31.298721313476562}}
+2022-12-26 12:43:30,338 INFO    HandlerThread:20495 [system_monitor.py:probe():181] Finished collecting system info
+2022-12-26 12:43:30,339 INFO    HandlerThread:20495 [system_monitor.py:probe():184] Publishing system info
+2022-12-26 12:43:30,340 DEBUG   HandlerThread:20495 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2022-12-26 12:43:30,344 DEBUG   HandlerThread:20495 [system_info.py:_save_pip():67] Saving pip packages done
+2022-12-26 12:43:30,345 DEBUG   HandlerThread:20495 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2022-12-26 12:43:31,397 DEBUG   HandlerThread:20495 [system_info.py:_save_conda():86] Saving conda packages done
+2022-12-26 12:43:31,399 INFO    HandlerThread:20495 [system_monitor.py:probe():186] Finished publishing system info
+2022-12-26 12:44:30,264 DEBUG   SystemMonitor:20495 [system_monitor.py:_start():130] Starting system metrics aggregation loop

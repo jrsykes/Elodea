@@ -1,18 +1,28 @@
 
 #%%
-import torchvision
+root = "/jmain02/home/J2AD016/jjw02/jjs00-jjw02/dat"
 import os
+
+os.environ['WANDB_MODE'] = 'offline'
+os.environ['HF_DATASETS_OFFLINE'] = '1'
+os.environ['TRANSFORMERS_OFFLINE'] = '1'
+
+import torchvision
 from transformers import DetrFeatureExtractor
 import numpy as np
 import os
 from PIL import Image, ImageDraw
 import pytorch_lightning as pl
-from transformers import DetrConfig, DetrForObjectDetection
+from transformers import DetrConfig, DetrForObjectDetection, AutoConfig
 import torch
 import wandb
 from pytorch_lightning import Trainer
 from torch.utils.data import DataLoader
 #%%
+
+batch_size = 4
+name = "rudder_detr"
+
 
 class CocoDetection(torchvision.datasets.CocoDetection):
     def __init__(self, img_folder, feature_extractor, train=True):
@@ -46,7 +56,11 @@ class Detr(pl.LightningModule):
   def __init__(self, lr=1e-4, lr_backbone=1e-5, weight_decay=1e-4):
     super().__init__()
     # replace COCO classification head with custom head
-    self.model = DetrForObjectDetection.from_pretrained("facebook/detr-resnet-50", num_labels=len(id2label), ignore_mismatched_sizes=True)
+    
+    config = AutoConfig.from_pretrained("/jmain02/home/J2AD016/jjw02/jjs00-jjw02/.cache/huggingface/hub/models--facebook--detr-resnet-50/snapshots/c783425425d573f30483efb0660bf6207deea991/config.json")
+    config.id2label = id2label
+    config.label2id = label2id
+    self.model = DetrForObjectDetection.from_pretrained("facebook/detr-resnet-50", ignore_mismatched_sizes=True, config=config)
     # see https://github.com/PyTorchLightning/pytorch-lightning/pull/1896
     self.lr = lr
     self.lr_backbone = lr_backbone
@@ -108,49 +122,33 @@ class Detr(pl.LightningModule):
       return val_dataloader
 # %%
 def main():
+  #model = Detr(lr=1e-4, lr_backbone=1e-5, weight_decay=1e-4)
   
-  
-  root = "/local/scratch/jrs596/dat/ElodeaProject"
-  name = "rudder_detr"
-
-  model = Detr(lr=1e-4, lr_backbone=1e-5, weight_decay=1e-4)
+  checkpoint_pth = "/jmain02/home/J2AD016/jjw02/jjs00-jjw02/dat/ElodeaProject/rudder_detr/lightning_logs/version_406825/checkpoints/epoch=1258-step=8813.ckpt"
+  model = Detr.load_from_checkpoint(checkpoint_pth)
 
   outputs = model(pixel_values=batch['pixel_values'], pixel_mask=batch['pixel_mask'])
   outputs.logits.shape
 
-  trainer = Trainer(gpus=2, gradient_clip_val=0.1, default_root_dir=os.path.join(root, name))
+  trainer = Trainer(gpus=torch.cuda.device_count(), gradient_clip_val=0.1, default_root_dir=os.path.join(root, 'ElodeaProject', name), max_epochs=10000, log_every_n_steps=20)
   trainer.fit(model)
 #%%
 wandb.init(project="Rudder2", entity="frankslab")
 
 feature_extractor = DetrFeatureExtractor.from_pretrained("facebook/detr-resnet-50")
-train_dataset = CocoDetection(img_folder='/local/scratch/jrs596/dat/ElodeaProject/BB4_combined_split/train', feature_extractor=feature_extractor)
-val_dataset = CocoDetection(img_folder='/local/scratch/jrs596/dat/ElodeaProject/BB4_combined_split/val', feature_extractor=feature_extractor, train=False)
+train_dataset = CocoDetection(img_folder='/jmain02/home/J2AD016/jjw02/jjs00-jjw02/dat/ElodeaProject/BB4_combined_split/train', feature_extractor=feature_extractor)
+val_dataset = CocoDetection(img_folder='/jmain02/home/J2AD016/jjw02/jjs00-jjw02/dat/ElodeaProject/BB4_combined_split/val', feature_extractor=feature_extractor, train=False)
 # %%
 print("Number of training examples:", len(train_dataset))
 print("Number of validation examples:", len(val_dataset))
-# %%
-image_ids = train_dataset.coco.getImgIds()
-image_id = image_ids[np.random.randint(0, len(image_ids))]
-print('Image n°{}'.format(image_id))
-image = train_dataset.coco.loadImgs(image_id)[0]
-image = Image.open(os.path.join('/local/scratch/jrs596/dat/ElodeaProject/BB3_combined_split/train/rudder', image['file_name']))
 
-annotations = train_dataset.coco.imgToAnns[image_id]
-draw = ImageDraw.Draw(image, "RGBA")
 
 cats = train_dataset.coco.cats
 id2label = {k: v['name'] for k,v in cats.items()}
+label2id = {v:k for k,v in id2label.items()}
 
-for annotation in annotations:
-  box = annotation['bbox']
-  class_idx = annotation['category_id']
-  x,y,w,h = tuple(box)
-  draw.rectangle((x,y,x+w,y+h), outline='red', width=1)
-  draw.text((x, y), id2label[class_idx], fill='white')
-
-train_dataloader = DataLoader(train_dataset, collate_fn=collate_fn, batch_size=4, shuffle=True)
-val_dataloader = DataLoader(val_dataset, collate_fn=collate_fn, batch_size=4)
+train_dataloader = DataLoader(train_dataset, collate_fn=collate_fn, batch_size=batch_size, shuffle=True, num_workers=os.cpu_count())
+val_dataloader = DataLoader(val_dataset, collate_fn=collate_fn, batch_size=batch_size, num_workers=os.cpu_count())
 batch = next(iter(train_dataloader))
 
 # %%

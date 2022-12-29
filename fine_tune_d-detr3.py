@@ -16,12 +16,6 @@ import pickle
 from sklearn import metrics
 from progress.bar import Bar
 #from torch.utils.mobile_optimizer import optimize_for_mobile
-
-os.environ['TRANSFORMERS_CACHE'] = "/scratch/staff/jrs596/TRANSFORMERS_CACHE"
-
-from transformers import DeformableDetrForObjectDetection, DetrFeatureExtractor
-import wandb
-
 import sys
 import argparse
 from torch.utils.data import DataLoader
@@ -30,7 +24,7 @@ from torch.utils.data import DataLoader
 parser = argparse.ArgumentParser('encoder decoder examiner')
 parser.add_argument('--model_name', type=str, default='rudder_ddetr',
                         help='save name for model')
-parser.add_argument('--root', type=str, default='/scratch/staff/jrs596/dat/',
+parser.add_argument('--root', type=str, default='/jmain02/home/J2AD016/jjw02/jjs00-jjw02/dat/ElodeaProject',
                         help='location of all data')
 parser.add_argument('--data_dir', type=str, default='balloon',
                         help='location of all data')
@@ -51,12 +45,18 @@ parser.add_argument('--weight_decay', type=float, default=0,
 parser.add_argument('--eps', type=float, default=1e-8,
                         help='epsilon')
 
-
-
 args = parser.parse_args()
 print(args)
 
+Transformers_cache_path = "/jmain02/home/J2AD016/jjw02/jjs00-jjw02/dat/TRANSFORMERS_CACHE"
+os.environ['TRANSFORMERS_CACHE'] = Transformers_cache_path
+os.environ['WANDB_MODE'] = 'offline'
+os.environ['HF_DATASETS_OFFLINE'] = '1'
+os.environ['TRANSFORMERS_OFFLINE'] = '1'
+os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 
+from transformers import DeformableDetrForObjectDetection, AutoImageProcessor, AutoConfig
+import wandb
 
 #Define some variable and paths
 #data_dir = os.path.join(args.root, args.data_dir)
@@ -67,7 +67,7 @@ log_dir= model_path + "/logs" + "/logs_" + args.model_name
 
 #print n files in each directory
 print('Train images: ' + str(len(os.listdir(data_dir + '/train'))-1))
-print('Val images: ' + str(len(os.listdir(data_dir + '/val'))-1))
+#print('Val images: ' + str(len(os.listdir(data_dir + '/val'))-1))
 
 #writer = SummaryWriter(log_dir=log_dir)
 #Define traning loop
@@ -104,7 +104,7 @@ def train_model(model, dataloaders_dict, optimizer, patience):
         
 
         #Training and validation loop
-        for phase in ['train', 'val']:
+        for phase in ['train']:#, 'val']:
             if phase == 'train':
                 model.train()  # Set model to training mode
 
@@ -147,13 +147,13 @@ def train_model(model, dataloaders_dict, optimizer, patience):
                         pixel_mask = batch["pixel_mask"].to(device)
                         labels = [{k: v.to(device) for k, v in t.items()} for t in batch["labels"]]
 
-                        print(pixel_values.shape)
-                        print(pixel_mask.shape)
-                        print(labels)
+                        # print(pixel_values.shape)
+                        # print(pixel_mask.shape)
+                        # print(labels)
                     
                         outputs = model(pixel_values=pixel_values, pixel_mask=pixel_mask, labels=labels)
-                        print(outputs)
-                     
+                        print(outputs.loss)
+                        exit()
                         #Calculate loss and other model metrics
                         loss = criterion(outputs, labels)
                         _, preds = torch.max(outputs, 1)    
@@ -273,7 +273,9 @@ class CocoDetection(torchvision.datasets.CocoDetection):
 
 def collate_fn(batch):
   pixel_values = [item[0] for item in batch]
-  feature_extractor = DetrFeatureExtractor.from_pretrained("facebook/detr-resnet-50")
+  #feature_extractor = DetrFeatureExtractor.from_pretrained("facebook/detr-resnet-50")
+  feature_extractor = AutoImageProcessor.from_pretrained("SenseTime/deformable-detr")
+
   encoding = feature_extractor.pad_and_create_pixel_mask(pixel_values, return_tensors="pt")
   labels = [item[1] for item in batch]
 
@@ -286,28 +288,36 @@ def collate_fn(batch):
   batch['labels'] = labels
   return batch
 
-#Instantiate model and load dataset etc
-
-model = DeformableDetrForObjectDetection.from_pretrained("SenseTime/deformable-detr",  num_labels=1, ignore_mismatched_sizes=True)
-
-#wandb.init(project="Rudder2", entity="frankslab")
 
 
-feature_extractor = DetrFeatureExtractor.from_pretrained("facebook/detr-resnet-50")
+#feature_extractor = DetrFeatureExtractor.from_pretrained("facebook/detr-resnet-50")
+feature_extractor = AutoImageProcessor.from_pretrained("SenseTime/deformable-detr")
 
 train_dataset = CocoDetection(img_folder=os.path.join(args.root, args.data_dir, 'train'), feature_extractor=feature_extractor)
-val_dataset = CocoDetection(img_folder=os.path.join(args.root, args.data_dir, 'val'), feature_extractor=feature_extractor, train=False)
+#val_dataset = CocoDetection(img_folder=os.path.join(args.root, args.data_dir, 'val'), feature_extractor=feature_extractor, train=False)
 
 print("Number of training examples loaded:", len(train_dataset))
-print("Number of validation examples loaded:", len(val_dataset))
+#print("Number of validation examples loaded:", len(val_dataset))
+
 
 cats = train_dataset.coco.cats
 id2label = {k: v['name'] for k,v in cats.items()}
+  
+  #invert id2label
+label2id = {v:k for k,v in id2label.items()}
+  
+config = AutoConfig.from_pretrained(Transformers_cache_path + "/models--SenseTime--deformable-detr/snapshots/a30ee67eda2a60e12d2df31bcd63e57e19fc25bd/config.json")
+config.id2label = id2label
+config.label2id = label2id
 
-train_dataloader = DataLoader(train_dataset, collate_fn=collate_fn, batch_size=2, shuffle=True, num_workers=1)
-val_dataloader = DataLoader(val_dataset, collate_fn=collate_fn, batch_size=4)
+model = DeformableDetrForObjectDetection.from_pretrained("SenseTime/deformable-detr", ignore_mismatched_sizes=True, config=config)
 
-dataloaders_dict = {'train': train_dataloader, 'val': val_dataloader}
+#wandb.init(project="Rudder2", entity="frankslab")
+
+train_dataloader = DataLoader(train_dataset, collate_fn=collate_fn, batch_size=args.batch_size, shuffle=True, num_workers=args.batch_size)
+#val_dataloader = DataLoader(val_dataset, collate_fn=collate_fn, batch_size=args.batch_size)
+
+dataloaders_dict = {'train': train_dataloader}#, 'val': val_dataloader}
 
 #model = nn.DataParallel(model)
 device = torch.device("cuda")

@@ -1,0 +1,27 @@
+2022-12-26 12:57:15,254 INFO    StreamThr :30511 [internal.py:wandb_internal():90] W&B internal server running at pid: 30511, started at: 2022-12-26 12:57:15.251582
+2022-12-26 12:57:15,280 DEBUG   HandlerThread:30511 [handler.py:handle_request():139] handle_request: status
+2022-12-26 12:57:15,281 DEBUG   SenderThread:30511 [sender.py:send_request():317] send_request: status
+2022-12-26 12:57:15,302 INFO    WriterThread:30511 [datastore.py:open_for_write():75] open: /home/userfs/j/jrs596/scripts/Elodea/wandb/offline-run-20221226_125715-bexkbyg1/run-bexkbyg1.wandb
+2022-12-26 12:57:15,361 DEBUG   HandlerThread:30511 [handler.py:handle_request():139] handle_request: run_start
+2022-12-26 12:57:15,375 DEBUG   HandlerThread:30511 [system_info.py:__init__():31] System info init
+2022-12-26 12:57:15,375 DEBUG   HandlerThread:30511 [system_info.py:__init__():46] System info init done
+2022-12-26 12:57:15,376 INFO    HandlerThread:30511 [system_monitor.py:start():150] Starting system monitor
+2022-12-26 12:57:15,377 INFO    HandlerThread:30511 [system_monitor.py:probe():171] Collecting system info
+2022-12-26 12:57:15,378 INFO    SystemMonitor:30511 [system_monitor.py:_start():116] Starting system asset monitoring threads
+2022-12-26 12:57:15,382 INFO    SystemMonitor:30511 [interfaces.py:start():168] Started cpu
+2022-12-26 12:57:15,388 INFO    SystemMonitor:30511 [interfaces.py:start():168] Started disk
+2022-12-26 12:57:15,394 INFO    SystemMonitor:30511 [interfaces.py:start():168] Started gpu
+2022-12-26 12:57:15,402 INFO    SystemMonitor:30511 [interfaces.py:start():168] Started memory
+2022-12-26 12:57:15,405 INFO    SystemMonitor:30511 [interfaces.py:start():168] Started network
+2022-12-26 12:57:15,418 DEBUG   HandlerThread:30511 [system_info.py:probe():195] Probing system
+2022-12-26 12:57:15,421 DEBUG   HandlerThread:30511 [system_info.py:_probe_git():180] Probing git
+2022-12-26 12:57:15,463 DEBUG   HandlerThread:30511 [system_info.py:_probe_git():188] Probing git done
+2022-12-26 12:57:15,463 DEBUG   HandlerThread:30511 [system_info.py:probe():241] Probing system done
+2022-12-26 12:57:15,464 DEBUG   HandlerThread:30511 [system_monitor.py:probe():180] {'os': 'Linux-5.4.0-135-generic-x86_64-with-debian-buster-sid', 'python': '3.7.15', 'heartbeatAt': '2022-12-26T12:57:15.418664', 'startedAt': '2022-12-26T12:57:15.178373', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/userfs/j/jrs596/scripts/Elodea/detr_inf.py', 'codePath': 'detr_inf.py', 'git': {'remote': 'https://github.com/jrsykes/Elodea.git', 'commit': '043944fdff500637a91f2f704a02195863b83caf'}, 'email': 'jamie.sykes@york.ac.uk', 'root': '/home/userfs/j/jrs596/scripts/Elodea', 'host': 'csgpu5.cs.york.ac.uk', 'username': 'jrs596', 'executable': '/local/scratch/jrs596/envs/d-detr/bin/python', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 4.2160833333333345, 'min': 800.0, 'max': 4700.0}, 'cpu_freq_per_core': [{'current': 4.217, 'min': 800.0, 'max': 4700.0}, {'current': 4.209, 'min': 800.0, 'max': 4700.0}, {'current': 4.22, 'min': 800.0, 'max': 4700.0}, {'current': 4.221, 'min': 800.0, 'max': 4700.0}, {'current': 4.221, 'min': 800.0, 'max': 4700.0}, {'current': 4.221, 'min': 800.0, 'max': 4700.0}, {'current': 4.166, 'min': 800.0, 'max': 4700.0}, {'current': 4.221, 'min': 800.0, 'max': 4700.0}, {'current': 4.221, 'min': 800.0, 'max': 4700.0}, {'current': 4.221, 'min': 800.0, 'max': 4700.0}, {'current': 4.221, 'min': 800.0, 'max': 4700.0}, {'current': 4.234, 'min': 800.0, 'max': 4700.0}], 'disk': {'total': 95.56354522705078, 'used': 58.864219665527344}, 'gpu': 'NVIDIA GeForce GTX 1080 Ti', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce GTX 1080 Ti', 'memory_total': 11811160064}, {'name': 'Quadro P6000', 'memory_total': 25769803776}], 'memory': {'total': 31.298721313476562}}
+2022-12-26 12:57:15,465 INFO    HandlerThread:30511 [system_monitor.py:probe():181] Finished collecting system info
+2022-12-26 12:57:15,465 INFO    HandlerThread:30511 [system_monitor.py:probe():184] Publishing system info
+2022-12-26 12:57:15,466 DEBUG   HandlerThread:30511 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2022-12-26 12:57:15,469 DEBUG   HandlerThread:30511 [system_info.py:_save_pip():67] Saving pip packages done
+2022-12-26 12:57:15,469 DEBUG   HandlerThread:30511 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2022-12-26 12:57:16,555 DEBUG   HandlerThread:30511 [system_info.py:_save_conda():86] Saving conda packages done
+2022-12-26 12:57:16,561 INFO    HandlerThread:30511 [system_monitor.py:probe():186] Finished publishing system info

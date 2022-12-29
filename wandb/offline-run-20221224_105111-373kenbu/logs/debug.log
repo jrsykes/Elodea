@@ -1,0 +1,22 @@
+2022-12-24 10:51:11,965 INFO    MainThread:23266 [wandb_setup.py:_flush():68] Configure stats pid to 23266
+2022-12-24 10:51:11,966 INFO    MainThread:23266 [wandb_setup.py:_flush():68] Loading settings from /home/userfs/j/jrs596/.config/wandb/settings
+2022-12-24 10:51:11,966 INFO    MainThread:23266 [wandb_setup.py:_flush():68] Loading settings from /home/userfs/j/jrs596/scripts/Elodea/wandb/settings
+2022-12-24 10:51:11,967 INFO    MainThread:23266 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'mode': 'offline', '_require_service': 'True'}
+2022-12-24 10:51:11,967 INFO    MainThread:23266 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program_relpath': 'def_detr_inf.py', 'program': '/home/userfs/j/jrs596/scripts/Elodea/def_detr_inf.py'}
+2022-12-24 10:51:11,968 INFO    MainThread:23266 [wandb_init.py:_log_setup():476] Logging user logs to /home/userfs/j/jrs596/scripts/Elodea/wandb/offline-run-20221224_105111-373kenbu/logs/debug.log
+2022-12-24 10:51:11,968 INFO    MainThread:23266 [wandb_init.py:_log_setup():477] Logging internal logs to /home/userfs/j/jrs596/scripts/Elodea/wandb/offline-run-20221224_105111-373kenbu/logs/debug-internal.log
+2022-12-24 10:51:11,969 INFO    MainThread:23266 [wandb_init.py:init():516] calling init triggers
+2022-12-24 10:51:11,969 INFO    MainThread:23266 [wandb_init.py:init():520] wandb.init called with sweep_config: {}
+config: {}
+2022-12-24 10:51:11,970 INFO    MainThread:23266 [wandb_init.py:init():569] starting backend
+2022-12-24 10:51:11,970 INFO    MainThread:23266 [wandb_init.py:init():573] setting up manager
+2022-12-24 10:51:11,983 INFO    MainThread:23266 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-12-24 10:51:11,992 INFO    MainThread:23266 [wandb_init.py:init():580] backend started and connected
+2022-12-24 10:51:12,004 INFO    MainThread:23266 [wandb_init.py:init():658] updated telemetry
+2022-12-24 10:51:12,055 INFO    MainThread:23266 [wandb_init.py:init():728] starting run threads in backend
+2022-12-24 10:51:13,378 INFO    MainThread:23266 [wandb_run.py:_console_start():1986] atexit reg
+2022-12-24 10:51:13,379 INFO    MainThread:23266 [wandb_run.py:_redirect():1844] redirect: SettingsConsole.WRAP_RAW
+2022-12-24 10:51:13,379 INFO    MainThread:23266 [wandb_run.py:_redirect():1909] Wrapping output streams.
+2022-12-24 10:51:13,379 INFO    MainThread:23266 [wandb_run.py:_redirect():1931] Redirects installed.
+2022-12-24 10:51:13,380 INFO    MainThread:23266 [wandb_init.py:init():765] run started, returning control to user process
+2022-12-24 10:51:14,632 WARNING MsgRouterThr:23266 [router.py:message_loop():77] message_loop has been closed

@@ -23,7 +23,7 @@ val_dataloader = DataLoader(val_dataset, collate_fn=collate_fn, batch_size=2)
 
 #%%
 
-os.chdir("/home/userfs/j/jrs596/scripts/Elodea/detr")
+os.chdir("/home/userfs/j/jrs596/scripts/detr")
 from datasets import get_coco_api_from_dataset
 from datasets.coco_eval import CocoEvaluator
 #%%
@@ -37,7 +37,7 @@ coco_evaluator = CocoEvaluator(base_ds, iou_types) # initialize evaluator with g
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 #%%
-checkpoint_pth = "/local/scratch/jrs596/dat/ElodeaProject/rudder_detr/lightning_logs/version_11/checkpoint.ckpt"
+checkpoint_pth = "/local/scratch/jrs596/dat/ElodeaProject/model.ckpt"
 model = Detr.load_from_checkpoint(checkpoint_pth)
 #model = Detr()
 
