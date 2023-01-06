@@ -1,4 +1,0 @@
-name: d-detr
-channels:
-  - defaults
-prefix: /scratch/staff/jrs596/python_environments/envs/d-detr

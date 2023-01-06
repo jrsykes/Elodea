@@ -39,7 +39,7 @@ coco_evaluator = CocoEvaluator(base_ds, iou_types) # initialize evaluator with g
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 #%%
-checkpoint_pth = "/local/scratch/jrs596/dat/Mongoose/epoch=54-step=605.ckpt"
+checkpoint_pth = "/local/scratch/jrs596/dat/Mongoose/epoch=1529-step=16830.ckpt"
 
 
 #model = Detr()
@@ -49,24 +49,24 @@ model = Detr.load_from_checkpoint(checkpoint_pth)
 model.to(device)
 model.eval()
 #%%
-print("Running evaluation...")
+# print("Running evaluation...")
 
-for idx, batch in enumerate(tqdm(val_dataloader)):
-    # get the inputs
-    pixel_values = batch["pixel_values"].to(device)
-    pixel_mask = batch["pixel_mask"].to(device)
-    labels = [{k: v.to(device) for k, v in t.items()} for t in batch["labels"]] # these are in DETR format, resized + normalized
-    # forward pass
-    outputs = model.model(pixel_values=pixel_values, pixel_mask=pixel_mask)
+# for idx, batch in enumerate(tqdm(val_dataloader)):
+#     # get the inputs
+#     pixel_values = batch["pixel_values"].to(device)
+#     pixel_mask = batch["pixel_mask"].to(device)
+#     labels = [{k: v.to(device) for k, v in t.items()} for t in batch["labels"]] # these are in DETR format, resized + normalized
+#     # forward pass
+#     outputs = model.model(pixel_values=pixel_values, pixel_mask=pixel_mask)
 
-    orig_target_sizes = torch.stack([target["orig_size"] for target in labels], dim=0)
-    results = feature_extractor.post_process(outputs, orig_target_sizes) # convert outputs of model to COCO api
-    res = {target['image_id'].item(): output for target, output in zip(labels, results)}
-    coco_evaluator.update(res)
+#     orig_target_sizes = torch.stack([target["orig_size"] for target in labels], dim=0)
+#     results = feature_extractor.post_process(outputs, orig_target_sizes) # convert outputs of model to COCO api
+#     res = {target['image_id'].item(): output for target, output in zip(labels, results)}
+#     coco_evaluator.update(res)
 
-coco_evaluator.synchronize_between_processes()
-coco_evaluator.accumulate()
-coco_evaluator.summarize()
+# coco_evaluator.synchronize_between_processes()
+# coco_evaluator.accumulate()
+# coco_evaluator.summarize()
 # %%
 pixel_values, target = val_dataset[1]
 
@@ -76,9 +76,11 @@ print(pixel_values.shape)
 image = Image.open('/local/scratch/jrs596/dat/Mongoose/Dans_data/train/images/2236.png')
 
 convert_tensor = transforms.ToTensor()
-resize_tensor = transforms.Resize((1000, 800))
+resize_tensor = transforms.Resize((2500, 2500))
 pixel_values = convert_tensor(image).unsqueeze(0).to(device)
 pixel_values = resize_tensor(pixel_values)
+
+#model to data parallel
 
 outputs = model(pixel_values=pixel_values, pixel_mask=None)
 
@@ -118,12 +120,13 @@ def plot_results(pil_img, prob, boxes):
     plt.axis('off')
     plt.show()
 
-def visualize_predictions(image, outputs, threshold=0.00000001):
+def visualize_predictions(image, outputs, threshold=0.0000000):
   # keep only predictions with confidence >= threshold
   probas = outputs.logits.softmax(-1)[0, :, :-1]
   #keep = probas.max(-1).values > threshold
-  #keep 10 best boxes
-  keep = probas.max(-1).values.topk(10).indices
+  #keep n best boxes
+  n=30
+  keep = probas.max(-1).values.topk(n).indices
   
   # convert predicted boxes from [0; 1] to image scales
   bboxes_scaled = rescale_bboxes(outputs.pred_boxes[0, keep].cpu(), image.size)

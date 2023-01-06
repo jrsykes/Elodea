@@ -134,7 +134,7 @@ def main():
   trainer = Trainer(gpus=torch.cuda.device_count(), gradient_clip_val=0.1, default_root_dir=os.path.join(root, 'Mongoose', name), max_epochs=10000, log_every_n_steps=5)
   trainer.fit(model)
 #%%
-wandb.init(project="Rudder2", entity="frankslab")
+wandb.init(project="Mongoose", entity="frankslab")
 
 feature_extractor = DetrFeatureExtractor.from_pretrained("facebook/detr-resnet-50")
 #train_dataset = CocoDetection(img_folder='/jmain02/home/J2AD016/jjw02/jjs00-jjw02/dat"/ElodeaProject/BB4_combined_split/train', feature_extractor=feature_extractor)

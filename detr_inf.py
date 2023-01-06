@@ -36,7 +36,7 @@ coco_evaluator = CocoEvaluator(base_ds, iou_types) # initialize evaluator with g
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 #%%
-checkpoint_pth = "/local/scratch/jrs596/dat/ElodeaProject/rudder_detr/epoch=1258-step=8813.ckpt"
+checkpoint_pth = "/local/scratch/jrs596/dat/ElodeaProject/rudder_detr/epoch=1047-step=7336.ckpt"
 
 
 #model = Detr()
@@ -65,16 +65,16 @@ coco_evaluator.synchronize_between_processes()
 coco_evaluator.accumulate()
 coco_evaluator.summarize()
 # %%
-image = Image.open('/local/scratch/jrs596/dat/ElodeaProject/BB3_combined/rudder/1670514682.2602918.jpeg')
+image = Image.open('/local/scratch/jrs596/dat/ElodeaProject/BB4_combined_split/val/1670514682.2031014.jpeg')
 
 convert_tensor = transforms.ToTensor()
-resize_tensor = transforms.Resize((1000, 800))
+resize_tensor = transforms.Resize((2500, 2500))
 pixel_values = convert_tensor(image).unsqueeze(0).to(device)
 pixel_values = resize_tensor(pixel_values)
 
 outputs = model(pixel_values=pixel_values, pixel_mask=None)
 
-#%%
+
 # colors for visualization
 COLORS = [[0.000, 0.447, 0.741], [0.850, 0.325, 0.098], [0.929, 0.694, 0.125],
           [0.494, 0.184, 0.556], [0.466, 0.674, 0.188], [0.301, 0.745, 0.933]]
@@ -107,12 +107,14 @@ def plot_results(pil_img, prob, boxes):
                 bbox=dict(facecolor='yellow', alpha=0.5))
     plt.axis('off')
     plt.show()
-#%%
-def visualize_predictions(image, outputs, threshold=0.0000001):
+
+def visualize_predictions(image, outputs, threshold=0.000000):
   # keep only predictions with confidence >= threshold
   probas = outputs.logits.softmax(-1)[0, :, :-1]
   #keep = probas.max(-1).values > threshold
-  #keep onlY max prob
+  #keep 10 best boxes
+  #keep = probas.max(-1).values.topk(5).indices
+  #keep only max prob
   keep = probas.max(-1).values == probas.max(-1).values.max()
   # convert predicted boxes from [0; 1] to image scales
   bboxes_scaled = rescale_bboxes(outputs.pred_boxes[0, keep].cpu(), image.size)

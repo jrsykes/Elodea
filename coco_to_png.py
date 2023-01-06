@@ -4,8 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import skimage.io as io
 
-coco_annotation_file_path = "/local/scratch/jrs596/dat/Kats/Dans_data/train/custom_train.json"
-#coco_annotation_file_path = "/local/scratch/jrs596/dat/Kats/Dans_data/train/coco_train.json"
+coco_annotation_file_path = "/local/scratch/jrs596/dat/Mongoose/Dans_data/custom_train.json"
+#coco_annotation_file_path = "/local/scratch/jrs596/dat/Mongoose/Dans_data/train/coco_train.json"
 coco_annotation = COCO(annotation_file=coco_annotation_file_path)
 #%%
 cat_ids = coco_annotation.getCatIds()
@@ -14,7 +14,8 @@ cat_names = [cat["name"] for cat in cats]
 
 catIds = coco_annotation.getCatIds(catNms=cat_names)
 
-imgIds_ = coco_annotation.getImgIds(imgIds = imgIds_[203])
+imgIds_ = coco_annotation.getImgIds()
+#imgIds_ = coco_annotation.getImgIds(imgIds = imgIds_[203])
 
 print(imgIds_)
 
@@ -39,5 +40,5 @@ for i in imgIds_:
             pass
     #plt.imshow(mask)
     #save mask to file
-    plt.imsave('/local/scratch/jrs596/dat/Kats/Dans_data/train/masks/' + img['file_name'], mask)
+    plt.imsave('/local/scratch/jrs596/dat/Mongoose/Dans_data/train/masks/' + img['file_name'], mask)
 # %%
